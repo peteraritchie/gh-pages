@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 
-        <title>Peter Ritchie</title>
+        <title>Peter Ritchie - Docking With Run-Time-Created Controls</title>
         <meta name="description" content="Peter Ritchie" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">        
 
@@ -28,9 +28,9 @@
         <meta name="msapplication-tooltip" content="Peter Ritchie" />
         <meta name="msapplication-starturl" content="/" />
 
-        <meta property="og:title" content="Peter Ritchie" />
+        <meta property="og:title" content="Peter Ritchie - Docking With Run-Time-Created Controls" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="http://blog.peterritchie.com/" />
+        <meta property="og:url" content="http://blog.peterritchie.com/posts/Docking-With-Run-Time-Created-Controls" />
         <!-- TODO: More social graph meta tags -->
 
         
@@ -73,10 +73,19 @@
                                 <div class="row">
                                         <div class="col-md-12">
 
-    <div class="site-heading">
-        <h1>Peter Ritchie</h1>
-                <hr class="small">
-        <span class="subheading">IT Architecture Expert</span>
+    
+<div class="post-heading">
+    <h1>Docking With Run-Time-Created Controls</h1>
+    <div class="meta">        
+Published on Friday, July 7, 2006<br>    </div>
+        <div class="tags">
+                    <a role="button" href="/tags/NET-Development" class="btn btn-default btn-xs">.NET Development</a>
+                    <a role="button" href="/tags/C%23" class="btn btn-default btn-xs">C#</a>
+                    <a role="button" href="/tags/July-2006" class="btn btn-default btn-xs">July 2006</a>
+                    <a role="button" href="/tags/msmvps" class="btn btn-default btn-xs">msmvps</a>
+                    <a role="button" href="/tags/Software-Development" class="btn btn-default btn-xs">Software Development</a>
+                    <a role="button" href="/tags/WinForms" class="btn btn-default btn-xs">WinForms</a>
+        </div>     
 </div>
                                         </div>
                                 </div>
@@ -88,75 +97,68 @@
                         <div class="row">
                                 <div id="content" class="col-md-12">
                                         
-<div class="row">
-    <div class="col-sm-8 right-border">
-                <div class="post-preview">
-                    <a href="/posts/What-is-Breadcrumbing-in-The-Workplace">
-                        <h2 class="post-title">What is &quot;Breadcrumbing&quot; in The Workplace?</h2>
-                    </a>
-                    <p class="post-meta">Posted on Saturday, January 29, 2022</p>
-<p><img src="/assets/jeshoots-com--2vD8lIhdnw-unsplash.jpg" class="img-fluid" alt="frustration"></p>                </div>       
-                    <hr /> 
-                <div class="post-preview">
-                    <a href="/posts/Environment-Variables-with-CSharp-Conditional-Compilation-Symbols">
-                        <h2 class="post-title">Environment Variables with C# Conditional Compilation Symbols</h2>
-                    </a>
-                    <p class="post-meta">Posted on Thursday, December 12, 2019</p>
-<p>Have you ever thought, it would be nice to have a symbol like <code>PETERRIT</code> that is unique to your domain account that you could use for code that YOU maybe working on but don't want to break the build?</p>                </div>       
-                    <hr /> 
-                <div class="post-preview">
-                    <a href="/posts/RESTful-Versioning">
-                        <h2 class="post-title">RESTful Versioning</h2>
-                    </a>
-                    <p class="post-meta">Posted on Tuesday, November 12, 2019</p>
-<p>Versioning is not new.  Versioning seems to be one of those things that people find hard to do or difficult to fully understand, especially with services and APIs.  RESTful versioning seems to be in the realm of Tabs v Spaces, but I want to detail my related observations (mostly of other's writings, but with some added color).</p>                </div>       
-        <ul class="pager">
-            <li class="previous">                
-            </li>
-            <li class="next">
-            </li>
-        </ul>
-    </div>
-    <div class="col-sm-4 sidebar">
-        <hr class="visible-xs-block" />
 
-            <h5>Tags</h5>
-            <div>
-                    <a role="button" href="/tags/msmvps" class="btn btn-default btn-sm"> msmvps (275)</a>
-                    <a role="button" href="/tags/Software-Development" class="btn btn-default btn-sm"> Software Development (101)</a>
-                    <a role="button" href="/tags/NET-Development" class="btn btn-default btn-sm"> .NET Development (91)</a>
-                    <a role="button" href="/tags/C%23" class="btn btn-default btn-sm"> C# (87)</a>
-                    <a role="button" href="/tags/Uncategorized" class="btn btn-default btn-sm"> Uncategorized (61)</a>
-                    <a role="button" href="/tags/Design/Coding-Guidance" class="btn btn-default btn-sm"> Design/Coding Guidance (50)</a>
-                    <a role="button" href="/tags/Software-Development-Guidance" class="btn btn-default btn-sm"> Software Development Guidance (33)</a>
-                    <a role="button" href="/tags/DevCenterPost" class="btn btn-default btn-sm"> DevCenterPost (31)</a>
-                    <a role="button" href="/tags/Visual-Studio-2008" class="btn btn-default btn-sm"> Visual Studio 2008 (19)</a>
-                    <a role="button" href="/tags/Visual-Studio-2005" class="btn btn-default btn-sm"> Visual Studio 2005 (19)</a>
-            </div>
-            <ul class="pager">
-                <li class="next">
-                    <a href="/tags">View All Tags &rarr;</a>
-                </li>
-            </ul>
+<p><a href="http://blogs.msmvps.com/peterritchie/2006/07/07/runtimedockfill/" title="Permalink to Docking With Run-Time-Created Controls">Source</a></p>
+<h1 id="docking-with-run-time-created-controls">Docking With Run-Time-Created Controls</h1>
+<p>I was throwing together some demo code that involved creating a control at runtime, that I wanteddocked in a certain way on the parent Form. I could have pre-created the control in the designer and hidden it–to be made visible instead of creating it–but, that's not the situation I wasin. Simply creating the control and setting the Dock property (in this case to DockStyle.Fill) isn't enough to dock it properly if there are any existing docked controls.</p>
+<p>If you've ever created a control and runtime and attempted to change the Dock property, you've probably noticed it doesn't dock the way you want. Control docking depends on order of the control in the Controls collection of the parent Form. If you have a Form with a control whose Dock property is DockStyle.top, and you create a new control and set it's dock to DockStyle.Fill, it fills to the entire form client area, not the the area left over by the other docked controls.</p>
+<p>In order to create a control and add it to the formwith Dock set toDockStyle.Fill you need to push it to the top of the Controls collection. This can be accomplished with the <a href="http://msdn2.microsoft.com/en-us/library/system.windows.forms.control.controlcollection.setchildindex.aspx">SetChildIndex()</a> method on the Collections property. For example:</p>
+<blockquote class="blockquote">
+</blockquote>
+<p>PictureBox pictureBox = new PictureBox();<br />
+pictureBox.Image = pictureBox.ErrorImage;<br />
+pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;<br />
+pictureBox.Dock = DockStyle.Fill;<br />
+this.Controls.Add(pictureBox);<br />
+// the magic line:<br />
+this.Controls.SetChildIndex(pictureBox, 0);Technorati Tags: <a href="http://technorati.com/tag/WinForms">WinForms</a></p>
 
-            <hr />
-            <h5>Older Posts</h5>
-            <ul class="list-unstyled">
-                    <li><a href="/posts/Service-Oriented-is-Declarative-Not-Imperative">Service-Oriented is Declarative, not Imperative</a></li>
-                    <li><a href="/posts/Thoughts-Web-Services--REST-APIs--and-Message-Structure">Thoughts on Web Services, REST APIs, and Message Structure</a></li>
-                    <li><a href="/posts/Domain-Oriented-Observability-The-Decorative-Way">Domain-Oriented Observability: The Decorative Way</a></li>
-                    <li><a href="/posts/Disabled-Browser-Copy-to-Clipboard--WTF">Disabled Browser Copy-to-Clipboard: WTF?</a></li>
-            </ul>
-                <ul class="pager">
-                    <li class="next">
-                        <a href="/posts">Archive &rarr;</a>
-                    </li>
-                </ul>
 
-        
-    </div> 
-</div>
+<div id="disqus_thread"></div>  
+<!--
+    'Docking-With-Run-Time-Created-Controls'
+    'Docking With Run-Time-Created Controls'
+    'http://blog.peterritchie.com/posts/Docking-With-Run-Time-Created-Controls'
+-->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 
+    var fromJekyllDate = new Date('Wed Feb 01 2022');
+    var publishedDate = new Date('7/7/2006');
+    console.info('Docking-With-Run-Time-Created-Controls');
+
+    var disqus_identifier = '';
+    var disqus_shortname = 'peterritchiesblog'; // required: replace example with your forum shortname
+    var disqus_title = 'Docking With Run-Time-Created Controls';
+    var disqus_url = 'http://blog.peterritchie.com/posts/Docking-With-Run-Time-Created-Controls';
+
+    if(publishedDate < fromJekyllDate)
+    {
+        disqus_url = disqus_url.replace('/posts', '');
+        disqus_url = disqus_url + '/';
+    }
+    else
+    {
+        //var disqus_identifier = 'Docking-With-Run-Time-Created-Controls';
+    }
+    console.info(disqus_identifier);
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
                                 </div>
                         </div>
                 </div>

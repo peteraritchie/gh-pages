@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 
-        <title>Peter Ritchie</title>
+        <title>Peter Ritchie - Uses for yield Part One &#x2013; Introduction</title>
         <meta name="description" content="Peter Ritchie" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">        
 
@@ -28,9 +28,9 @@
         <meta name="msapplication-tooltip" content="Peter Ritchie" />
         <meta name="msapplication-starturl" content="/" />
 
-        <meta property="og:title" content="Peter Ritchie" />
+        <meta property="og:title" content="Peter Ritchie - Uses for yield Part One &#x2013; Introduction" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="http://blog.peterritchie.com/" />
+        <meta property="og:url" content="http://blog.peterritchie.com/posts/Uses-for-yield-Part-One-%E2%80%93-Introduction" />
         <!-- TODO: More social graph meta tags -->
 
         
@@ -73,10 +73,16 @@
                                 <div class="row">
                                         <div class="col-md-12">
 
-    <div class="site-heading">
-        <h1>Peter Ritchie</h1>
-                <hr class="small">
-        <span class="subheading">IT Architecture Expert</span>
+    
+<div class="post-heading">
+    <h1>Uses for yield Part One &#x2013; Introduction</h1>
+    <div class="meta">        
+Published on Saturday, February 3, 2007<br>    </div>
+        <div class="tags">
+                    <a role="button" href="/tags/February-2007" class="btn btn-default btn-xs">February 2007</a>
+                    <a role="button" href="/tags/msmvps" class="btn btn-default btn-xs">msmvps</a>
+                    <a role="button" href="/tags/Uncategorized" class="btn btn-default btn-xs">Uncategorized</a>
+        </div>     
 </div>
                                         </div>
                                 </div>
@@ -88,75 +94,102 @@
                         <div class="row">
                                 <div id="content" class="col-md-12">
                                         
-<div class="row">
-    <div class="col-sm-8 right-border">
-                <div class="post-preview">
-                    <a href="/posts/What-is-Breadcrumbing-in-The-Workplace">
-                        <h2 class="post-title">What is &quot;Breadcrumbing&quot; in The Workplace?</h2>
-                    </a>
-                    <p class="post-meta">Posted on Saturday, January 29, 2022</p>
-<p><img src="/assets/jeshoots-com--2vD8lIhdnw-unsplash.jpg" class="img-fluid" alt="frustration"></p>                </div>       
-                    <hr /> 
-                <div class="post-preview">
-                    <a href="/posts/Environment-Variables-with-CSharp-Conditional-Compilation-Symbols">
-                        <h2 class="post-title">Environment Variables with C# Conditional Compilation Symbols</h2>
-                    </a>
-                    <p class="post-meta">Posted on Thursday, December 12, 2019</p>
-<p>Have you ever thought, it would be nice to have a symbol like <code>PETERRIT</code> that is unique to your domain account that you could use for code that YOU maybe working on but don't want to break the build?</p>                </div>       
-                    <hr /> 
-                <div class="post-preview">
-                    <a href="/posts/RESTful-Versioning">
-                        <h2 class="post-title">RESTful Versioning</h2>
-                    </a>
-                    <p class="post-meta">Posted on Tuesday, November 12, 2019</p>
-<p>Versioning is not new.  Versioning seems to be one of those things that people find hard to do or difficult to fully understand, especially with services and APIs.  RESTful versioning seems to be in the realm of Tabs v Spaces, but I want to detail my related observations (mostly of other's writings, but with some added color).</p>                </div>       
-        <ul class="pager">
-            <li class="previous">                
-            </li>
-            <li class="next">
-            </li>
-        </ul>
-    </div>
-    <div class="col-sm-4 sidebar">
-        <hr class="visible-xs-block" />
 
-            <h5>Tags</h5>
-            <div>
-                    <a role="button" href="/tags/msmvps" class="btn btn-default btn-sm"> msmvps (275)</a>
-                    <a role="button" href="/tags/Software-Development" class="btn btn-default btn-sm"> Software Development (101)</a>
-                    <a role="button" href="/tags/NET-Development" class="btn btn-default btn-sm"> .NET Development (91)</a>
-                    <a role="button" href="/tags/C%23" class="btn btn-default btn-sm"> C# (87)</a>
-                    <a role="button" href="/tags/Uncategorized" class="btn btn-default btn-sm"> Uncategorized (61)</a>
-                    <a role="button" href="/tags/Design/Coding-Guidance" class="btn btn-default btn-sm"> Design/Coding Guidance (50)</a>
-                    <a role="button" href="/tags/Software-Development-Guidance" class="btn btn-default btn-sm"> Software Development Guidance (33)</a>
-                    <a role="button" href="/tags/DevCenterPost" class="btn btn-default btn-sm"> DevCenterPost (31)</a>
-                    <a role="button" href="/tags/Visual-Studio-2008" class="btn btn-default btn-sm"> Visual Studio 2008 (19)</a>
-                    <a role="button" href="/tags/Visual-Studio-2005" class="btn btn-default btn-sm"> Visual Studio 2005 (19)</a>
-            </div>
-            <ul class="pager">
-                <li class="next">
-                    <a href="/tags">View All Tags &rarr;</a>
-                </li>
-            </ul>
+<p><a href="http://blogs.msmvps.com/peterritchie/2007/02/03/uses-for-yield-part-one-introduction/" title="Permalink to Uses for yield Part One – Introduction">Source</a></p>
+<h1 id="uses-for-yield-part-one-introduction">Uses for yield Part One – Introduction</h1>
+<p>.NET has strong support for collections. Even the built-in Array type implements <code>ICollection</code>. The <code>ICollection</code> interface derives from the <code>IEnumerable</code> interface to allow easy enumeration of all elements in a collection. In C#, the foreach statement uses the <code>GetEnumerator</code> member of <code>IEnumerable</code> (a class need not implement <code>IEnumerable</code>, it just needs a public <code>GetEnumerator</code> method that returns an <code>IEnumerator</code> object) to begin enumeration.</p>
+<p>Previous to C# 2.0 foreach required the existence of the collection and all the elements contained therein, or a custom implementation of IEnumerator.<code>MoveNext()</code> and IEnumerator.Current. Not an entirely unexpected demand, when you think of it. If you wanted to provide the ability to enumerate all the elements of a particular set of data then that data would have to be calculated at the time of the set's creation. C# 2.0 introduced the yield keyword that meant you could implement an enumerable set that doesn't require all its elements to exist at the beginning of the enumeration or creating an IEnumerator-derived class.</p>
+<p>What does this do you for, the designer? Well, you can employ lazy evaluation to distribute processing throughout several different points in time. This is handy if you want to maintain a responsive UI, or you have to deal with high-latency resources like a web connection to a remote server or a connection to a remote database. This is especially beneficial if you know your clients aren't always going to enumerate all elements in your set (i.e. you don't have to perform processing to create all elements in order to use the foreach pattern). This effectively means the creation of your set can be O(1).</p>
+<p>The documentation for yield provides a pragmatic example of creating an enumerable set of powers of a number up to a specific exponent. A slight modification of the example shows that indeed the calculation of each power is in fact lazy, and distributed across time:</p>
+<blockquote class="blockquote">
+<p>calculating 2<sup>1<br />
+2</sup>1 = 2<br />
+calculating 2<sup>2<br />
+2</sup>2 = 4<br />
+calculating 2<sup>3<br />
+2</sup>3 = 8<br />
+calculating 2<sup>4<br />
+2</sup>4 = 16<br />
+calculating 2<sup>5<br />
+2</sup>5 = 32<br />
+calculating 2<sup>6<br />
+2</sup>6 = 64<br />
+calculating 2<sup>7<br />
+2</sup>7 = 128<br />
+calculating 2<sup>8<br />
+2</sup>8 = 256</p>
+</blockquote>
+<p>The yield statement has a couple of variations. To provide the value at the current position, use yield return <em>value</em>. Use yield break to signal the end of the set and to stop the enumeration loop. For example, to implement an enumerator of a set whose limit is notknown at the start of an enumeration:</p>
+<p>/// <summary></p>
+<p>/// Get an enumerator for all the keys pressed until Esc</p>
+<p>/// </summary></p>
+<p>/// <returns>IEnumerator object.</returns></p>
+<p>public static System.Collections.IEnumerable GetPressedKeysUntilEscape()</p>
+<p>{</p>
+<p>do</p>
+<p>{</p>
+<p>ConsoleKeyInfo character = Console.ReadKey(true);</p>
+<p>if (character.Key == ConsoleKey.Escape)</p>
+<p>{</p>
+<pre><code>yield break;
+</code></pre>
+<p>}</p>
+<p>yield return character.Key;</p>
+<p>}</p>
+<p>while (true);</p>
+<p>}</p>
+<p>// …</p>
+<p>foreach (ConsoleKey key in GetPressedKeysUntilEscape())</p>
+<p>{</p>
+<p>Debug.WriteLine(key.ToString());</p>
+<p>}</p>
 
-            <hr />
-            <h5>Older Posts</h5>
-            <ul class="list-unstyled">
-                    <li><a href="/posts/Service-Oriented-is-Declarative-Not-Imperative">Service-Oriented is Declarative, not Imperative</a></li>
-                    <li><a href="/posts/Thoughts-Web-Services--REST-APIs--and-Message-Structure">Thoughts on Web Services, REST APIs, and Message Structure</a></li>
-                    <li><a href="/posts/Domain-Oriented-Observability-The-Decorative-Way">Domain-Oriented Observability: The Decorative Way</a></li>
-                    <li><a href="/posts/Disabled-Browser-Copy-to-Clipboard--WTF">Disabled Browser Copy-to-Clipboard: WTF?</a></li>
-            </ul>
-                <ul class="pager">
-                    <li class="next">
-                        <a href="/posts">Archive &rarr;</a>
-                    </li>
-                </ul>
 
-        
-    </div> 
-</div>
+<div id="disqus_thread"></div>  
+<!--
+    'Uses-for-yield-Part-One-%E2%80%93-Introduction'
+    'Uses for yield Part One &#x2013; Introduction'
+    'http://blog.peterritchie.com/posts/Uses-for-yield-Part-One-%E2%80%93-Introduction'
+-->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 
+    var fromJekyllDate = new Date('Wed Feb 01 2022');
+    var publishedDate = new Date('2/3/2007');
+    console.info('Uses-for-yield-Part-One-%E2%80%93-Introduction');
+
+    var disqus_identifier = '';
+    var disqus_shortname = 'peterritchiesblog'; // required: replace example with your forum shortname
+    var disqus_title = 'Uses for yield Part One &#x2013; Introduction';
+    var disqus_url = 'http://blog.peterritchie.com/posts/Uses-for-yield-Part-One-%E2%80%93-Introduction';
+
+    if(publishedDate < fromJekyllDate)
+    {
+        disqus_url = disqus_url.replace('/posts', '');
+        disqus_url = disqus_url + '/';
+    }
+    else
+    {
+        //var disqus_identifier = 'Uses-for-yield-Part-One-%E2%80%93-Introduction';
+    }
+    console.info(disqus_identifier);
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
                                 </div>
                         </div>
                 </div>

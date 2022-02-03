@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 
-        <title>Peter Ritchie</title>
+        <title>Peter Ritchie - visual studio jedi 2</title>
         <meta name="description" content="Peter Ritchie" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">        
 
@@ -28,9 +28,9 @@
         <meta name="msapplication-tooltip" content="Peter Ritchie" />
         <meta name="msapplication-starturl" content="/" />
 
-        <meta property="og:title" content="Peter Ritchie" />
+        <meta property="og:title" content="Peter Ritchie - visual studio jedi 2" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="http://blog.peterritchie.com/" />
+        <meta property="og:url" content="http://blog.peterritchie.com/posts/visual-studio-jedi-2" />
         <!-- TODO: More social graph meta tags -->
 
         
@@ -73,10 +73,17 @@
                                 <div class="row">
                                         <div class="col-md-12">
 
-    <div class="site-heading">
-        <h1>Peter Ritchie</h1>
-                <hr class="small">
-        <span class="subheading">IT Architecture Expert</span>
+    
+<div class="post-heading">
+    <h1>visual studio jedi 2</h1>
+    <div class="meta">        
+Published on Friday, November 14, 2008<br>    </div>
+        <div class="tags">
+                    <a role="button" href="/tags/msmvps" class="btn btn-default btn-xs">msmvps</a>
+                    <a role="button" href="/tags/November-2008" class="btn btn-default btn-xs">November 2008</a>
+                    <a role="button" href="/tags/Uncategorized" class="btn btn-default btn-xs">Uncategorized</a>
+                    <a role="button" href="/tags/Visual-Studio-2008" class="btn btn-default btn-xs">Visual Studio 2008</a>
+        </div>     
 </div>
                                         </div>
                                 </div>
@@ -88,75 +95,81 @@
                         <div class="row">
                                 <div id="content" class="col-md-12">
                                         
-<div class="row">
-    <div class="col-sm-8 right-border">
-                <div class="post-preview">
-                    <a href="/posts/What-is-Breadcrumbing-in-The-Workplace">
-                        <h2 class="post-title">What is &quot;Breadcrumbing&quot; in The Workplace?</h2>
-                    </a>
-                    <p class="post-meta">Posted on Saturday, January 29, 2022</p>
-<p><img src="/assets/jeshoots-com--2vD8lIhdnw-unsplash.jpg" class="img-fluid" alt="frustration"></p>                </div>       
-                    <hr /> 
-                <div class="post-preview">
-                    <a href="/posts/Environment-Variables-with-CSharp-Conditional-Compilation-Symbols">
-                        <h2 class="post-title">Environment Variables with C# Conditional Compilation Symbols</h2>
-                    </a>
-                    <p class="post-meta">Posted on Thursday, December 12, 2019</p>
-<p>Have you ever thought, it would be nice to have a symbol like <code>PETERRIT</code> that is unique to your domain account that you could use for code that YOU maybe working on but don't want to break the build?</p>                </div>       
-                    <hr /> 
-                <div class="post-preview">
-                    <a href="/posts/RESTful-Versioning">
-                        <h2 class="post-title">RESTful Versioning</h2>
-                    </a>
-                    <p class="post-meta">Posted on Tuesday, November 12, 2019</p>
-<p>Versioning is not new.  Versioning seems to be one of those things that people find hard to do or difficult to fully understand, especially with services and APIs.  RESTful versioning seems to be in the realm of Tabs v Spaces, but I want to detail my related observations (mostly of other's writings, but with some added color).</p>                </div>       
-        <ul class="pager">
-            <li class="previous">                
-            </li>
-            <li class="next">
-            </li>
-        </ul>
-    </div>
-    <div class="col-sm-4 sidebar">
-        <hr class="visible-xs-block" />
 
-            <h5>Tags</h5>
-            <div>
-                    <a role="button" href="/tags/msmvps" class="btn btn-default btn-sm"> msmvps (275)</a>
-                    <a role="button" href="/tags/Software-Development" class="btn btn-default btn-sm"> Software Development (101)</a>
-                    <a role="button" href="/tags/NET-Development" class="btn btn-default btn-sm"> .NET Development (91)</a>
-                    <a role="button" href="/tags/C%23" class="btn btn-default btn-sm"> C# (87)</a>
-                    <a role="button" href="/tags/Uncategorized" class="btn btn-default btn-sm"> Uncategorized (61)</a>
-                    <a role="button" href="/tags/Design/Coding-Guidance" class="btn btn-default btn-sm"> Design/Coding Guidance (50)</a>
-                    <a role="button" href="/tags/Software-Development-Guidance" class="btn btn-default btn-sm"> Software Development Guidance (33)</a>
-                    <a role="button" href="/tags/DevCenterPost" class="btn btn-default btn-sm"> DevCenterPost (31)</a>
-                    <a role="button" href="/tags/Visual-Studio-2008" class="btn btn-default btn-sm"> Visual Studio 2008 (19)</a>
-                    <a role="button" href="/tags/Visual-Studio-2005" class="btn btn-default btn-sm"> Visual Studio 2005 (19)</a>
-            </div>
-            <ul class="pager">
-                <li class="next">
-                    <a href="/tags">View All Tags &rarr;</a>
-                </li>
-            </ul>
+<p><a href="http://blogs.msmvps.com/peterritchie/2008/11/14/visual-studio-jedi-2/" title="Permalink to visual studio jedi 2">Source</a></p>
+<h1 id="visual-studio-jedi-2">visual studio jedi 2</h1>
+<p><strong>Project Naming</strong><br />
+When you create a project that project name is also the name of the namespace. If you want a particular namespace, enter it with the project name. If you don't want your binary to contain that namespace, it's easier to rename that in the project properties Build tab than it is to change the default namespace, edit the class files, rename the project, rename folders, etc.</p>
+<p>**Solution Naming<br />
+**When creating solutions it's often best to name the solution differently than the project that you're creating. When I create a project it will be contained within a solution. Once that solution is created I will always want to add sibling projects to that solution (like a test project, a front-end (or back-end) Project, a domain/model project, infrastructure project, etc.). When I create the project and accept the name of the project as also the name of the solution it can be a bit confusing. For example, if I want to create an n-layer Invoicing application I may need an invoicing front-end application, in which case I may create a project named PRI.InvoicingFrontEnd. To support that front-end I will have a infrastructure layer project (repositories, application services, etc.), a domain layer project, and a test project. As projects within a &quot;PRI.InvoicingFrontEnd&quot; this doesn't really make sense. So, for my solution name I won't accept the same name as the project and enter something more sensible and that doesn't include namespaces. In this case, &quot;Invoicing&quot;.</p>
+<p><strong>Repetitive tasks</strong><br />
+Some repetitive tasks are easy to accomplish in Visual Studio. For example, if I wanted to replace the string &quot;wish&quot; with &quot;want&quot; I'd simply to a project/solution-wide search and replace.</p>
+<p>Some repetitive tasks are not so easy. For example, if I want a search and replace that involves replacing multiple lines, search and replace doesn't work.</p>
+<p><strong>Rectangular Selections is your friend</strong><br />
+Many times you have rows of text that you want to incorporate into code. Sometimes the text is outside the source code, sometimes its not. An example may be a list of identifier names in a specification. Sometimes this text is a single column of text that you can just paste into a CS file and search/replace with commas to create a enum. Sometimes this text is a single column in a multi-column textual table. This is easy to extract into code without having to come up with a complex regular expression. Let's say we have tabular text like this:</p>
+<p>Name Priority</p>
+<p>public enum Keys<br />
+{<br />
+A = 65,<br />
+Add = 107,<br />
+Alt = 262144,<br />
+Apps = 93,<br />
+Attn = 246,<br />
+B = 66,<br />
+Back = 8,<br />
+//…<br />
+Y = 89,<br />
+Z = 90,<br />
+Zoom = 251<br />
+}</p>
+<p>Rather than</p>
 
-            <hr />
-            <h5>Older Posts</h5>
-            <ul class="list-unstyled">
-                    <li><a href="/posts/Service-Oriented-is-Declarative-Not-Imperative">Service-Oriented is Declarative, not Imperative</a></li>
-                    <li><a href="/posts/Thoughts-Web-Services--REST-APIs--and-Message-Structure">Thoughts on Web Services, REST APIs, and Message Structure</a></li>
-                    <li><a href="/posts/Domain-Oriented-Observability-The-Decorative-Way">Domain-Oriented Observability: The Decorative Way</a></li>
-                    <li><a href="/posts/Disabled-Browser-Copy-to-Clipboard--WTF">Disabled Browser Copy-to-Clipboard: WTF?</a></li>
-            </ul>
-                <ul class="pager">
-                    <li class="next">
-                        <a href="/posts">Archive &rarr;</a>
-                    </li>
-                </ul>
 
-        
-    </div> 
-</div>
+<div id="disqus_thread"></div>  
+<!--
+    'visual-studio-jedi-2'
+    'visual studio jedi 2'
+    'http://blog.peterritchie.com/posts/visual-studio-jedi-2'
+-->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 
+    var fromJekyllDate = new Date('Wed Feb 01 2022');
+    var publishedDate = new Date('11/14/2008');
+    console.info('visual-studio-jedi-2');
+
+    var disqus_identifier = '';
+    var disqus_shortname = 'peterritchiesblog'; // required: replace example with your forum shortname
+    var disqus_title = 'visual studio jedi 2';
+    var disqus_url = 'http://blog.peterritchie.com/posts/visual-studio-jedi-2';
+
+    if(publishedDate < fromJekyllDate)
+    {
+        disqus_url = disqus_url.replace('/posts', '');
+        disqus_url = disqus_url + '/';
+    }
+    else
+    {
+        //var disqus_identifier = 'visual-studio-jedi-2';
+    }
+    console.info(disqus_identifier);
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
                                 </div>
                         </div>
                 </div>

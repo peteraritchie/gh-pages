@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 
-        <title>Peter Ritchie</title>
+        <title>Peter Ritchie - Persisting Azure Mobile Services authentication tokens and handling expiry</title>
         <meta name="description" content="Peter Ritchie" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">        
 
@@ -28,9 +28,9 @@
         <meta name="msapplication-tooltip" content="Peter Ritchie" />
         <meta name="msapplication-starturl" content="/" />
 
-        <meta property="og:title" content="Peter Ritchie" />
+        <meta property="og:title" content="Peter Ritchie - Persisting Azure Mobile Services authentication tokens and handling expiry" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="http://blog.peterritchie.com/" />
+        <meta property="og:url" content="http://blog.peterritchie.com/posts/Persisting-Azure-Mobile-Services-authentication-tokens-and-handling-expiry" />
         <!-- TODO: More social graph meta tags -->
 
         
@@ -73,10 +73,24 @@
                                 <div class="row">
                                         <div class="col-md-12">
 
-    <div class="site-heading">
-        <h1>Peter Ritchie</h1>
-                <hr class="small">
-        <span class="subheading">IT Architecture Expert</span>
+    
+<div class="post-heading">
+    <h1>Persisting Azure Mobile Services authentication tokens and handling expiry</h1>
+    <div class="meta">        
+Published on Thursday, October 24, 2013<br>    </div>
+        <div class="tags">
+                    <a role="button" href="/tags/NET-Development" class="btn btn-default btn-xs">.NET Development</a>
+                    <a role="button" href="/tags/Azure" class="btn btn-default btn-xs">Azure</a>
+                    <a role="button" href="/tags/Azure-Mobile-Services" class="btn btn-default btn-xs">Azure Mobile Services</a>
+                    <a role="button" href="/tags/C%23" class="btn btn-default btn-xs">C#</a>
+                    <a role="button" href="/tags/Mobile" class="btn btn-default btn-xs">Mobile</a>
+                    <a role="button" href="/tags/msmvps" class="btn btn-default btn-xs">msmvps</a>
+                    <a role="button" href="/tags/October-2013" class="btn btn-default btn-xs">October 2013</a>
+                    <a role="button" href="/tags/Visaul-Studio-2013" class="btn btn-default btn-xs">Visaul Studio 2013</a>
+                    <a role="button" href="/tags/Visual-Studio-2010" class="btn btn-default btn-xs">Visual Studio 2010</a>
+                    <a role="button" href="/tags/Windows-Phone" class="btn btn-default btn-xs">Windows Phone</a>
+                    <a role="button" href="/tags/Windows-Phone-71" class="btn btn-default btn-xs">Windows Phone 7.1</a>
+        </div>     
 </div>
                                         </div>
                                 </div>
@@ -88,75 +102,60 @@
                         <div class="row">
                                 <div id="content" class="col-md-12">
                                         
-<div class="row">
-    <div class="col-sm-8 right-border">
-                <div class="post-preview">
-                    <a href="/posts/What-is-Breadcrumbing-in-The-Workplace">
-                        <h2 class="post-title">What is &quot;Breadcrumbing&quot; in The Workplace?</h2>
-                    </a>
-                    <p class="post-meta">Posted on Saturday, January 29, 2022</p>
-<p><img src="/assets/jeshoots-com--2vD8lIhdnw-unsplash.jpg" class="img-fluid" alt="frustration"></p>                </div>       
-                    <hr /> 
-                <div class="post-preview">
-                    <a href="/posts/Environment-Variables-with-CSharp-Conditional-Compilation-Symbols">
-                        <h2 class="post-title">Environment Variables with C# Conditional Compilation Symbols</h2>
-                    </a>
-                    <p class="post-meta">Posted on Thursday, December 12, 2019</p>
-<p>Have you ever thought, it would be nice to have a symbol like <code>PETERRIT</code> that is unique to your domain account that you could use for code that YOU maybe working on but don't want to break the build?</p>                </div>       
-                    <hr /> 
-                <div class="post-preview">
-                    <a href="/posts/RESTful-Versioning">
-                        <h2 class="post-title">RESTful Versioning</h2>
-                    </a>
-                    <p class="post-meta">Posted on Tuesday, November 12, 2019</p>
-<p>Versioning is not new.  Versioning seems to be one of those things that people find hard to do or difficult to fully understand, especially with services and APIs.  RESTful versioning seems to be in the realm of Tabs v Spaces, but I want to detail my related observations (mostly of other's writings, but with some added color).</p>                </div>       
-        <ul class="pager">
-            <li class="previous">                
-            </li>
-            <li class="next">
-            </li>
-        </ul>
-    </div>
-    <div class="col-sm-4 sidebar">
-        <hr class="visible-xs-block" />
 
-            <h5>Tags</h5>
-            <div>
-                    <a role="button" href="/tags/msmvps" class="btn btn-default btn-sm"> msmvps (275)</a>
-                    <a role="button" href="/tags/Software-Development" class="btn btn-default btn-sm"> Software Development (101)</a>
-                    <a role="button" href="/tags/NET-Development" class="btn btn-default btn-sm"> .NET Development (91)</a>
-                    <a role="button" href="/tags/C%23" class="btn btn-default btn-sm"> C# (87)</a>
-                    <a role="button" href="/tags/Uncategorized" class="btn btn-default btn-sm"> Uncategorized (61)</a>
-                    <a role="button" href="/tags/Design/Coding-Guidance" class="btn btn-default btn-sm"> Design/Coding Guidance (50)</a>
-                    <a role="button" href="/tags/Software-Development-Guidance" class="btn btn-default btn-sm"> Software Development Guidance (33)</a>
-                    <a role="button" href="/tags/DevCenterPost" class="btn btn-default btn-sm"> DevCenterPost (31)</a>
-                    <a role="button" href="/tags/Visual-Studio-2008" class="btn btn-default btn-sm"> Visual Studio 2008 (19)</a>
-                    <a role="button" href="/tags/Visual-Studio-2005" class="btn btn-default btn-sm"> Visual Studio 2005 (19)</a>
-            </div>
-            <ul class="pager">
-                <li class="next">
-                    <a href="/tags">View All Tags &rarr;</a>
-                </li>
-            </ul>
+<p><a href="http://pr-blog.azurewebsites.net/2013/10/24/persisting-azure-mobile-services-authentication-tokens-and-handling-expiry/" title="Permalink to Persisting Azure Mobile Services authentication tokens and handling expiry">Source</a></p>
+<h1 id="persisting-azure-mobile-services-authentication-tokens-and-handling-expiry">Persisting Azure Mobile Services authentication tokens and handling expiry</h1>
+<p>With Azure Mobile Services, they provide the ability to authenticate users with a variety of providers (Twitter, Facebook, Google, Microsoft, and custom). This is very useful because you <strong>do not</strong> want to implement your own authentication services (ask Adobe).</p>
+<p>There's really good documentation around registering providers and performing authentication (see MobileServiceClient.LoginAsync if you're implementing .NET clients). This effectively lets authenticate a user when your application starts up. But, you'll likely want to cache that so you can re-use the token across application invocations so you don't have to <em>always</em> ask the user to authenticate upon every start-up. Unfortunately, this isn't documented as well. There used to be a way to pass along an IServiceFilter implementation (at least on Windows 8 clients) that could be used to detect 401 errors—and was blog-documented. This effectively allowed you to re-authenticate the user upon an expired token (there seems to be no direct way to refresh the token—although you could probably get provider information and refresh directly—but that's another day).</p>
+<p>But, IServiceFilter seems to be deprecated (or at least not available on Windows Phone [at least with 7.x]). So, how <em>do</em> you do it on Windows Phone? Well, when you create a MobileServiceClient object you can pass along one or more HttpMessageHandlers. HttpMessageHandler is an abstract class that you can implement to &quot;intercept&quot; requests. You can then detect a 401 error and re-login the user. HttpMessageHandler is completely abstract; but fortunately there's an implementation that implements the SendAsync method that you can override and <em>decorate</em>. Let's have a look:</p>
+<p>Now, of course, this isn't what I started with. I was working with a Phone 7.1 app in Visual Studio 2010. (I had just finished getting rid of VS 2012 and installed 2013 when I started this project before I realized VS 2013 doesn't support 7.1—so I was forced to use 2010). So, for anyone in the same boat, here's similar code without the async/await:</p>
 
-            <hr />
-            <h5>Older Posts</h5>
-            <ul class="list-unstyled">
-                    <li><a href="/posts/Service-Oriented-is-Declarative-Not-Imperative">Service-Oriented is Declarative, not Imperative</a></li>
-                    <li><a href="/posts/Thoughts-Web-Services--REST-APIs--and-Message-Structure">Thoughts on Web Services, REST APIs, and Message Structure</a></li>
-                    <li><a href="/posts/Domain-Oriented-Observability-The-Decorative-Way">Domain-Oriented Observability: The Decorative Way</a></li>
-                    <li><a href="/posts/Disabled-Browser-Copy-to-Clipboard--WTF">Disabled Browser Copy-to-Clipboard: WTF?</a></li>
-            </ul>
-                <ul class="pager">
-                    <li class="next">
-                        <a href="/posts">Archive &rarr;</a>
-                    </li>
-                </ul>
 
-        
-    </div> 
-</div>
+<div id="disqus_thread"></div>  
+<!--
+    'Persisting-Azure-Mobile-Services-authentication-tokens-and-handling-expiry'
+    'Persisting Azure Mobile Services authentication tokens and handling expiry'
+    'http://blog.peterritchie.com/posts/Persisting-Azure-Mobile-Services-authentication-tokens-and-handling-expiry'
+-->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 
+    var fromJekyllDate = new Date('Wed Feb 01 2022');
+    var publishedDate = new Date('10/24/2013');
+    console.info('Persisting-Azure-Mobile-Services-authentication-tokens-and-handling-expiry');
+
+    var disqus_identifier = '';
+    var disqus_shortname = 'peterritchiesblog'; // required: replace example with your forum shortname
+    var disqus_title = 'Persisting Azure Mobile Services authentication tokens and handling expiry';
+    var disqus_url = 'http://blog.peterritchie.com/posts/Persisting-Azure-Mobile-Services-authentication-tokens-and-handling-expiry';
+
+    if(publishedDate < fromJekyllDate)
+    {
+        disqus_url = disqus_url.replace('/posts', '');
+        disqus_url = disqus_url + '/';
+    }
+    else
+    {
+        //var disqus_identifier = 'Persisting-Azure-Mobile-Services-authentication-tokens-and-handling-expiry';
+    }
+    console.info(disqus_identifier);
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
                                 </div>
                         </div>
                 </div>

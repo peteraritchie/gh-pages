@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 
-        <title>Peter Ritchie</title>
+        <title>Peter Ritchie - On performance of immutable collections</title>
         <meta name="description" content="Peter Ritchie" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">        
 
@@ -28,9 +28,9 @@
         <meta name="msapplication-tooltip" content="Peter Ritchie" />
         <meta name="msapplication-starturl" content="/" />
 
-        <meta property="og:title" content="Peter Ritchie" />
+        <meta property="og:title" content="Peter Ritchie - On performance of immutable collections" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="http://blog.peterritchie.com/" />
+        <meta property="og:url" content="http://blog.peterritchie.com/posts/On-performance-of-immutable-collections" />
         <!-- TODO: More social graph meta tags -->
 
         
@@ -73,10 +73,16 @@
                                 <div class="row">
                                         <div class="col-md-12">
 
-    <div class="site-heading">
-        <h1>Peter Ritchie</h1>
-                <hr class="small">
-        <span class="subheading">IT Architecture Expert</span>
+    
+<div class="post-heading">
+    <h1>On performance of immutable collections</h1>
+    <div class="meta">        
+Published on Sunday, April 20, 2014<br>    </div>
+        <div class="tags">
+                    <a role="button" href="/tags/April-2014" class="btn btn-default btn-xs">April 2014</a>
+                    <a role="button" href="/tags/msmvps" class="btn btn-default btn-xs">msmvps</a>
+                    <a role="button" href="/tags/Multithreaded" class="btn btn-default btn-xs">Multithreaded</a>
+        </div>     
 </div>
                                         </div>
                                 </div>
@@ -88,75 +94,111 @@
                         <div class="row">
                                 <div id="content" class="col-md-12">
                                         
-<div class="row">
-    <div class="col-sm-8 right-border">
-                <div class="post-preview">
-                    <a href="/posts/What-is-Breadcrumbing-in-The-Workplace">
-                        <h2 class="post-title">What is &quot;Breadcrumbing&quot; in The Workplace?</h2>
-                    </a>
-                    <p class="post-meta">Posted on Saturday, January 29, 2022</p>
-<p><img src="/assets/jeshoots-com--2vD8lIhdnw-unsplash.jpg" class="img-fluid" alt="frustration"></p>                </div>       
-                    <hr /> 
-                <div class="post-preview">
-                    <a href="/posts/Environment-Variables-with-CSharp-Conditional-Compilation-Symbols">
-                        <h2 class="post-title">Environment Variables with C# Conditional Compilation Symbols</h2>
-                    </a>
-                    <p class="post-meta">Posted on Thursday, December 12, 2019</p>
-<p>Have you ever thought, it would be nice to have a symbol like <code>PETERRIT</code> that is unique to your domain account that you could use for code that YOU maybe working on but don't want to break the build?</p>                </div>       
-                    <hr /> 
-                <div class="post-preview">
-                    <a href="/posts/RESTful-Versioning">
-                        <h2 class="post-title">RESTful Versioning</h2>
-                    </a>
-                    <p class="post-meta">Posted on Tuesday, November 12, 2019</p>
-<p>Versioning is not new.  Versioning seems to be one of those things that people find hard to do or difficult to fully understand, especially with services and APIs.  RESTful versioning seems to be in the realm of Tabs v Spaces, but I want to detail my related observations (mostly of other's writings, but with some added color).</p>                </div>       
-        <ul class="pager">
-            <li class="previous">                
-            </li>
-            <li class="next">
-            </li>
-        </ul>
-    </div>
-    <div class="col-sm-4 sidebar">
-        <hr class="visible-xs-block" />
 
-            <h5>Tags</h5>
-            <div>
-                    <a role="button" href="/tags/msmvps" class="btn btn-default btn-sm"> msmvps (275)</a>
-                    <a role="button" href="/tags/Software-Development" class="btn btn-default btn-sm"> Software Development (101)</a>
-                    <a role="button" href="/tags/NET-Development" class="btn btn-default btn-sm"> .NET Development (91)</a>
-                    <a role="button" href="/tags/C%23" class="btn btn-default btn-sm"> C# (87)</a>
-                    <a role="button" href="/tags/Uncategorized" class="btn btn-default btn-sm"> Uncategorized (61)</a>
-                    <a role="button" href="/tags/Design/Coding-Guidance" class="btn btn-default btn-sm"> Design/Coding Guidance (50)</a>
-                    <a role="button" href="/tags/Software-Development-Guidance" class="btn btn-default btn-sm"> Software Development Guidance (33)</a>
-                    <a role="button" href="/tags/DevCenterPost" class="btn btn-default btn-sm"> DevCenterPost (31)</a>
-                    <a role="button" href="/tags/Visual-Studio-2008" class="btn btn-default btn-sm"> Visual Studio 2008 (19)</a>
-                    <a role="button" href="/tags/Visual-Studio-2005" class="btn btn-default btn-sm"> Visual Studio 2005 (19)</a>
-            </div>
-            <ul class="pager">
-                <li class="next">
-                    <a href="/tags">View All Tags &rarr;</a>
-                </li>
-            </ul>
+<p><a href="http://pr-blog.azurewebsites.net/2014/04/20/on-performance-of-immutable-collections/" title="Permalink to On performance of immutable collections">Source</a></p>
+<h1 id="on-performance-of-immutable-collections">On performance of immutable collections</h1>
+<p>Immutability is important in many aspects of developing software systems. Scalability, for example, uses immutability in many patterns and techniques (See actors, queues, etc.). Many of these techniques rely on copies of data instead of immutable types, but imagine the boost if guaranteed immutable types were used proactively?</p>
+<p>There are examples of types that act immutable in .NET that have been there a long time. <code>String</code> for example–it acts as if it were immutable. (There are no truly immutable types, unfortunately, yet in .NET–just types that provide an interface that does not allow changes to data). Despite being immutable there are methods that give the appearance &quot;modifying&quot; data by making a copy of it. <code>Insert</code> is one example, <code>var newText = &quot;Strng&quot;.Insert(3, &quot;I&quot;)</code> creates a new string with the &quot;modified&quot; value. <code>ImmutableDictionary</code> is another example of a type that acts as if it were immutable.</p>
+<p>You need to know you need immutable types before you use them. Once you know you need them it's important to know the performance implications of using them. But, it's important to make accurate comparisons. One naïve comparison of using a type like <code>ImmutableDictionary</code> might be:</p>
+<pre><code>{
+    var dic = new Dictionary&lt;object, object&gt;();
+    var sp = Stopwatch.StartNew();
+    for (int i = 0; i &lt; 10 * 1000 * 1000; i++)
+    {
+        var obj = new object();
+        dic[obj] = obj;
+    }
 
-            <hr />
-            <h5>Older Posts</h5>
-            <ul class="list-unstyled">
-                    <li><a href="/posts/Service-Oriented-is-Declarative-Not-Imperative">Service-Oriented is Declarative, not Imperative</a></li>
-                    <li><a href="/posts/Thoughts-Web-Services--REST-APIs--and-Message-Structure">Thoughts on Web Services, REST APIs, and Message Structure</a></li>
-                    <li><a href="/posts/Domain-Oriented-Observability-The-Decorative-Way">Domain-Oriented Observability: The Decorative Way</a></li>
-                    <li><a href="/posts/Disabled-Browser-Copy-to-Clipboard--WTF">Disabled Browser Copy-to-Clipboard: WTF?</a></li>
-            </ul>
-                <ul class="pager">
-                    <li class="next">
-                        <a href="/posts">Archive &rarr;</a>
-                    </li>
-                </ul>
+    Console.WriteLine(sp.Elapsed);
+}
 
-        
-    </div> 
-</div>
+{
+    var dic = ImmutableDictionary&lt;object, object&gt;.Empty;
+    var sp = Stopwatch.StartNew();
+    for (int i = 0; i &lt; 10 * 1000 * 1000; i++)
+    {
+        var obj = new object();
+        dic = dic.SetItem(obj, obj);
+    }
 
+    Console.WriteLine(sp.Elapsed);
+}
+</code></pre>
+<p>But it's a apples-orange comparison because the second performance test is gathering performance metrics on <em>making copies</em> of the collection, not performance metrics on <em>modifying</em> the collection (as you <em>can't</em> with <code>ImmutableCollection</code>. As a result you get a skewed comparison (something like 30 times slower, depending on your systems).</p>
+<p>A more accurate comparison might be something like:</p>
+<pre><code>{
+    var dic = new Dictionary&lt;object, object&gt;();
+    var sp = Stopwatch.StartNew();
+    for (int i = 0; i &lt; 10 * 1000 * 1000; i++)
+    {
+        var obj = new object();
+        dic = new Dictionary&lt;object, object&gt;(dic);
+        dic[obj] = obj;
+    }
+    Console.WriteLine(sp.Elapsed);
+}
+
+{
+    var dic = ImmutableDictionary&lt;object, object&gt;.Empty;
+    var sp = Stopwatch.StartNew();
+    for (int i = 0; i &lt; 10 * 1000 * 1000; i++)
+    {
+        var obj = new object();
+        dic = dic.SetItem(obj, obj);
+    }
+
+    Console.WriteLine(sp.Elapsed);
+}
+</code></pre>
+<p>Now we're comparing apples and apples! And what do we see? Well, actually <code>ImmutableDictionary</code> is actually considerably <em>faster</em> than <code>Dictionary</code>! If you run the above test, you'll see that the <code>Dictionary</code> test will actually take <em>hours</em>, if not more than a day. So, it's either a verynaïve comparision or really shows how much faster <code>ImmutableDictionary</code> is.</p>
+<p>Sure, making copies of a collection <em>is slower</em> than <em>not</em> making copies of a collection, but the comparison is naïve in another way, why would you use an <em>immutable</em> collection if you are using it as if you are_mutating it_ that frequently?</p>
+
+
+<div id="disqus_thread"></div>  
+<!--
+    'On-performance-of-immutable-collections'
+    'On performance of immutable collections'
+    'http://blog.peterritchie.com/posts/On-performance-of-immutable-collections'
+-->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+
+    var fromJekyllDate = new Date('Wed Feb 01 2022');
+    var publishedDate = new Date('4/20/2014');
+    console.info('On-performance-of-immutable-collections');
+
+    var disqus_identifier = '';
+    var disqus_shortname = 'peterritchiesblog'; // required: replace example with your forum shortname
+    var disqus_title = 'On performance of immutable collections';
+    var disqus_url = 'http://blog.peterritchie.com/posts/On-performance-of-immutable-collections';
+
+    if(publishedDate < fromJekyllDate)
+    {
+        disqus_url = disqus_url.replace('/posts', '');
+        disqus_url = disqus_url + '/';
+    }
+    else
+    {
+        //var disqus_identifier = 'On-performance-of-immutable-collections';
+    }
+    console.info(disqus_identifier);
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
                                 </div>
                         </div>
                 </div>

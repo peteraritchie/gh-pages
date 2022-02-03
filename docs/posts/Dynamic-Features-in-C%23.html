@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 
-        <title>Peter Ritchie</title>
+        <title>Peter Ritchie - Dynamic Features in C#</title>
         <meta name="description" content="Peter Ritchie" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">        
 
@@ -28,9 +28,9 @@
         <meta name="msapplication-tooltip" content="Peter Ritchie" />
         <meta name="msapplication-starturl" content="/" />
 
-        <meta property="og:title" content="Peter Ritchie" />
+        <meta property="og:title" content="Peter Ritchie - Dynamic Features in C#" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="http://blog.peterritchie.com/" />
+        <meta property="og:url" content="http://blog.peterritchie.com/posts/Dynamic-Features-in-C%23" />
         <!-- TODO: More social graph meta tags -->
 
         
@@ -73,10 +73,16 @@
                                 <div class="row">
                                         <div class="col-md-12">
 
-    <div class="site-heading">
-        <h1>Peter Ritchie</h1>
-                <hr class="small">
-        <span class="subheading">IT Architecture Expert</span>
+    
+<div class="post-heading">
+    <h1>Dynamic Features in C#</h1>
+    <div class="meta">        
+Published on Friday, November 14, 2008<br>    </div>
+        <div class="tags">
+                    <a role="button" href="/tags/C%23-4" class="btn btn-default btn-xs">C# 4</a>
+                    <a role="button" href="/tags/msmvps" class="btn btn-default btn-xs">msmvps</a>
+                    <a role="button" href="/tags/November-2008" class="btn btn-default btn-xs">November 2008</a>
+        </div>     
 </div>
                                         </div>
                                 </div>
@@ -88,75 +94,68 @@
                         <div class="row">
                                 <div id="content" class="col-md-12">
                                         
-<div class="row">
-    <div class="col-sm-8 right-border">
-                <div class="post-preview">
-                    <a href="/posts/What-is-Breadcrumbing-in-The-Workplace">
-                        <h2 class="post-title">What is &quot;Breadcrumbing&quot; in The Workplace?</h2>
-                    </a>
-                    <p class="post-meta">Posted on Saturday, January 29, 2022</p>
-<p><img src="/assets/jeshoots-com--2vD8lIhdnw-unsplash.jpg" class="img-fluid" alt="frustration"></p>                </div>       
-                    <hr /> 
-                <div class="post-preview">
-                    <a href="/posts/Environment-Variables-with-CSharp-Conditional-Compilation-Symbols">
-                        <h2 class="post-title">Environment Variables with C# Conditional Compilation Symbols</h2>
-                    </a>
-                    <p class="post-meta">Posted on Thursday, December 12, 2019</p>
-<p>Have you ever thought, it would be nice to have a symbol like <code>PETERRIT</code> that is unique to your domain account that you could use for code that YOU maybe working on but don't want to break the build?</p>                </div>       
-                    <hr /> 
-                <div class="post-preview">
-                    <a href="/posts/RESTful-Versioning">
-                        <h2 class="post-title">RESTful Versioning</h2>
-                    </a>
-                    <p class="post-meta">Posted on Tuesday, November 12, 2019</p>
-<p>Versioning is not new.  Versioning seems to be one of those things that people find hard to do or difficult to fully understand, especially with services and APIs.  RESTful versioning seems to be in the realm of Tabs v Spaces, but I want to detail my related observations (mostly of other's writings, but with some added color).</p>                </div>       
-        <ul class="pager">
-            <li class="previous">                
-            </li>
-            <li class="next">
-            </li>
-        </ul>
-    </div>
-    <div class="col-sm-4 sidebar">
-        <hr class="visible-xs-block" />
 
-            <h5>Tags</h5>
-            <div>
-                    <a role="button" href="/tags/msmvps" class="btn btn-default btn-sm"> msmvps (275)</a>
-                    <a role="button" href="/tags/Software-Development" class="btn btn-default btn-sm"> Software Development (101)</a>
-                    <a role="button" href="/tags/NET-Development" class="btn btn-default btn-sm"> .NET Development (91)</a>
-                    <a role="button" href="/tags/C%23" class="btn btn-default btn-sm"> C# (87)</a>
-                    <a role="button" href="/tags/Uncategorized" class="btn btn-default btn-sm"> Uncategorized (61)</a>
-                    <a role="button" href="/tags/Design/Coding-Guidance" class="btn btn-default btn-sm"> Design/Coding Guidance (50)</a>
-                    <a role="button" href="/tags/Software-Development-Guidance" class="btn btn-default btn-sm"> Software Development Guidance (33)</a>
-                    <a role="button" href="/tags/DevCenterPost" class="btn btn-default btn-sm"> DevCenterPost (31)</a>
-                    <a role="button" href="/tags/Visual-Studio-2008" class="btn btn-default btn-sm"> Visual Studio 2008 (19)</a>
-                    <a role="button" href="/tags/Visual-Studio-2005" class="btn btn-default btn-sm"> Visual Studio 2005 (19)</a>
-            </div>
-            <ul class="pager">
-                <li class="next">
-                    <a href="/tags">View All Tags &rarr;</a>
-                </li>
-            </ul>
+<p><a href="http://blogs.msmvps.com/peterritchie/2008/11/14/dynamic-features-in-c/" title="Permalink to Dynamic Features in C#">Source</a></p>
+<h1 id="dynamic-features-in-c">Dynamic Features in C#</h1>
+<p>.NET is the evolution of COM. .NET was rumoured to be originally called COM+ 2.5.</p>
+<p>.NET has evolved well beyond COM and while it fulfils many of the goals that COM originally tried to fulfil, .NET removes many of the COM trappings that developers have to deal with.</p>
+<p>C# is a .NET language with C++ heritage. C++, unlike VB is not a dynamic language. C# was only dynamic in that it provided COM interop abilities. You can program to any COM API you like, as long as you know what you're talking to. This is generally not a problem for 99% of COM libraries. But, COM libraries offer the ability to be strongly typed and/or completely dynamic. This means a method may return a value that simply isn't known until runtime. In C#, if you know what the type of that value will be a runtime, you can simply cast it to that type and it will work fine a runtime–sort of hiding the fact that it's really dynamic. If you debug C# code that deals with COM APIs, you may have noticed the type of some COM objects are __ComObject–encapsulating the fact that type information doesn't really exist until runtime.</p>
+<p>The problem with dealing with some dynamic COM APIs is that what the actual type of some return values simply isn't documented at runtime. In dynamic languages you can write things like this:</p>
+<p>var obj = GetSomeObject();<br />
+obj.SomeMethod();</p>
+<p>&quot;SomeMethod&quot; simply won't be resolved until runtime. The above code effectively means &quot;after you get the object from the GetSomeObject method, query the object for information about the &quot;SomeMethod&quot; method and if it exists, invoke it. This is like duck typing.</p>
+<p>I say 99% of COM APIs because most COM APIs are written to be consumed by strongly-typed languages like C++. But, COM doesn't require an object to have a strong type; an API can be written that completely relies upon checking for members at runtime.</p>
+<p>This has been a problem with C# because it simply hadn't supported that. As I said, you can get around types with methods that return dynamic types through casting; but if that type is never concretely defined anywhere that cast would be impossible.</p>
+<p>C# 4 adds dynamic support to the language so it can now support circumstances like this. It also makes consuming some COM APIs much easier because you don't have to know specific type information at compile-time. You can get by with member names and leave it to the runtime to find the physical members for you, at run-time.</p>
+<p>Oddly, the Visual Studio automation and extensibility API is based on this dynamic ability. Mostly legacy because Visual Studio has been around well before .NET and has supported automation and extensibility since then. This extensibility was based on COM. We have Visual Studio support .NET now, but the evolution of that extensibility has continued to support COM. Plus, Visual Studio also supports non .NET languages and thus must support extensibility with those languages and COM is generally accepted means of doing that.</p>
+<p>For the most part, the extensibility model of Visual Studio is documented in VB. In VB you have much more freedom to accept dynamic APIs. Let's have a look at some examples from the documentation:</p>
 
-            <hr />
-            <h5>Older Posts</h5>
-            <ul class="list-unstyled">
-                    <li><a href="/posts/Service-Oriented-is-Declarative-Not-Imperative">Service-Oriented is Declarative, not Imperative</a></li>
-                    <li><a href="/posts/Thoughts-Web-Services--REST-APIs--and-Message-Structure">Thoughts on Web Services, REST APIs, and Message Structure</a></li>
-                    <li><a href="/posts/Domain-Oriented-Observability-The-Decorative-Way">Domain-Oriented Observability: The Decorative Way</a></li>
-                    <li><a href="/posts/Disabled-Browser-Copy-to-Clipboard--WTF">Disabled Browser Copy-to-Clipboard: WTF?</a></li>
-            </ul>
-                <ul class="pager">
-                    <li class="next">
-                        <a href="/posts">Archive &rarr;</a>
-                    </li>
-                </ul>
 
-        
-    </div> 
-</div>
+<div id="disqus_thread"></div>  
+<!--
+    'Dynamic-Features-in-C%23'
+    'Dynamic Features in C#'
+    'http://blog.peterritchie.com/posts/Dynamic-Features-in-C%23'
+-->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 
+    var fromJekyllDate = new Date('Wed Feb 01 2022');
+    var publishedDate = new Date('11/14/2008');
+    console.info('Dynamic-Features-in-C%23');
+
+    var disqus_identifier = '';
+    var disqus_shortname = 'peterritchiesblog'; // required: replace example with your forum shortname
+    var disqus_title = 'Dynamic Features in C#';
+    var disqus_url = 'http://blog.peterritchie.com/posts/Dynamic-Features-in-C%23';
+
+    if(publishedDate < fromJekyllDate)
+    {
+        disqus_url = disqus_url.replace('/posts', '');
+        disqus_url = disqus_url + '/';
+    }
+    else
+    {
+        //var disqus_identifier = 'Dynamic-Features-in-C%23';
+    }
+    console.info(disqus_identifier);
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
                                 </div>
                         </div>
                 </div>

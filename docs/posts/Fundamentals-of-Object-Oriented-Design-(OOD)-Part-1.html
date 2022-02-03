@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 
-        <title>Peter Ritchie</title>
+        <title>Peter Ritchie - Fundamentals of Object-Oriented Design (OOD) Part 1</title>
         <meta name="description" content="Peter Ritchie" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">        
 
@@ -28,9 +28,9 @@
         <meta name="msapplication-tooltip" content="Peter Ritchie" />
         <meta name="msapplication-starturl" content="/" />
 
-        <meta property="og:title" content="Peter Ritchie" />
+        <meta property="og:title" content="Peter Ritchie - Fundamentals of Object-Oriented Design (OOD) Part 1" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="http://blog.peterritchie.com/" />
+        <meta property="og:url" content="http://blog.peterritchie.com/posts/Fundamentals-of-Object-Oriented-Design-(OOD)-Part-1" />
         <!-- TODO: More social graph meta tags -->
 
         
@@ -73,10 +73,19 @@
                                 <div class="row">
                                         <div class="col-md-12">
 
-    <div class="site-heading">
-        <h1>Peter Ritchie</h1>
-                <hr class="small">
-        <span class="subheading">IT Architecture Expert</span>
+    
+<div class="post-heading">
+    <h1>Fundamentals of Object-Oriented Design (OOD) Part 1</h1>
+    <div class="meta">        
+Published on Thursday, May 1, 2008<br>    </div>
+        <div class="tags">
+                    <a role="button" href="/tags/C%23" class="btn btn-default btn-xs">C#</a>
+                    <a role="button" href="/tags/Design/Coding-Guidance" class="btn btn-default btn-xs">Design/Coding Guidance</a>
+                    <a role="button" href="/tags/DevCenterPost" class="btn btn-default btn-xs">DevCenterPost</a>
+                    <a role="button" href="/tags/May-2008" class="btn btn-default btn-xs">May 2008</a>
+                    <a role="button" href="/tags/msmvps" class="btn btn-default btn-xs">msmvps</a>
+                    <a role="button" href="/tags/Software-Development" class="btn btn-default btn-xs">Software Development</a>
+        </div>     
 </div>
                                         </div>
                                 </div>
@@ -88,75 +97,64 @@
                         <div class="row">
                                 <div id="content" class="col-md-12">
                                         
-<div class="row">
-    <div class="col-sm-8 right-border">
-                <div class="post-preview">
-                    <a href="/posts/What-is-Breadcrumbing-in-The-Workplace">
-                        <h2 class="post-title">What is &quot;Breadcrumbing&quot; in The Workplace?</h2>
-                    </a>
-                    <p class="post-meta">Posted on Saturday, January 29, 2022</p>
-<p><img src="/assets/jeshoots-com--2vD8lIhdnw-unsplash.jpg" class="img-fluid" alt="frustration"></p>                </div>       
-                    <hr /> 
-                <div class="post-preview">
-                    <a href="/posts/Environment-Variables-with-CSharp-Conditional-Compilation-Symbols">
-                        <h2 class="post-title">Environment Variables with C# Conditional Compilation Symbols</h2>
-                    </a>
-                    <p class="post-meta">Posted on Thursday, December 12, 2019</p>
-<p>Have you ever thought, it would be nice to have a symbol like <code>PETERRIT</code> that is unique to your domain account that you could use for code that YOU maybe working on but don't want to break the build?</p>                </div>       
-                    <hr /> 
-                <div class="post-preview">
-                    <a href="/posts/RESTful-Versioning">
-                        <h2 class="post-title">RESTful Versioning</h2>
-                    </a>
-                    <p class="post-meta">Posted on Tuesday, November 12, 2019</p>
-<p>Versioning is not new.  Versioning seems to be one of those things that people find hard to do or difficult to fully understand, especially with services and APIs.  RESTful versioning seems to be in the realm of Tabs v Spaces, but I want to detail my related observations (mostly of other's writings, but with some added color).</p>                </div>       
-        <ul class="pager">
-            <li class="previous">                
-            </li>
-            <li class="next">
-            </li>
-        </ul>
-    </div>
-    <div class="col-sm-4 sidebar">
-        <hr class="visible-xs-block" />
 
-            <h5>Tags</h5>
-            <div>
-                    <a role="button" href="/tags/msmvps" class="btn btn-default btn-sm"> msmvps (275)</a>
-                    <a role="button" href="/tags/Software-Development" class="btn btn-default btn-sm"> Software Development (101)</a>
-                    <a role="button" href="/tags/NET-Development" class="btn btn-default btn-sm"> .NET Development (91)</a>
-                    <a role="button" href="/tags/C%23" class="btn btn-default btn-sm"> C# (87)</a>
-                    <a role="button" href="/tags/Uncategorized" class="btn btn-default btn-sm"> Uncategorized (61)</a>
-                    <a role="button" href="/tags/Design/Coding-Guidance" class="btn btn-default btn-sm"> Design/Coding Guidance (50)</a>
-                    <a role="button" href="/tags/Software-Development-Guidance" class="btn btn-default btn-sm"> Software Development Guidance (33)</a>
-                    <a role="button" href="/tags/DevCenterPost" class="btn btn-default btn-sm"> DevCenterPost (31)</a>
-                    <a role="button" href="/tags/Visual-Studio-2008" class="btn btn-default btn-sm"> Visual Studio 2008 (19)</a>
-                    <a role="button" href="/tags/Visual-Studio-2005" class="btn btn-default btn-sm"> Visual Studio 2005 (19)</a>
-            </div>
-            <ul class="pager">
-                <li class="next">
-                    <a href="/tags">View All Tags &rarr;</a>
-                </li>
-            </ul>
+<p><a href="http://blogs.msmvps.com/peterritchie/2008/05/01/fundamentals-of-object-oriented-design-ood-part-1/" title="Permalink to Fundamentals of Object-Oriented Design (OOD) Part 1">Source</a></p>
+<h1 id="fundamentals-of-object-oriented-design-ood-part-1">Fundamentals of Object-Oriented Design (OOD) Part 1</h1>
+<p>With increased usage of patterns and situationally specific strategies, people sometimes lose sight of the concepts and principles behind these patterns and strategies and fail to follow them when they're not using patterns or strategies. I feel it's good to periodically review the fundamental concepts and first principles.</p>
+<p>Object Oriented Design (OOD) attempts to help with the complexity of designing, writing, and maintaining software. It attempts to allow building of software by modeling real-world objects. As with any tool, it can be used improperly, but OOD attempts to facilitate simplicity, robustness, flexibility, etc.. OOD has many fundamental concepts. Some of these concepts include modularity, encapsulation, and abstraction. OOD deals with modeling behaviour and attributes of real-world objects.</p>
+<p>Modularity is a technique of composing software from separate parts. At the lowest level of an Object-Oriented Programming Language (OOPL), this is the definition of a type (a class or a struct in C#/C++). Depending on the platform there may be various other levels of modularity. In C#, for example, modularity can occur at other levels like module (source file), namespace, netmodule, assembly, etc. Modularity is a form of encapsulation.</p>
+<p>Encapsulation is a technique of hiding implementation details, grouping them together. In OOPL, the lowest level of encapsulation is the type level (again, class/struct in C#/C++). Implementation details (data) is separated from behaviour of a type. In some OOPLs both behaviour and attributes (properties, for example in C#) are separated from behaviour. This allows clients to decouple or to be not dependant on those implementation details. Encapsulation is a form of abstraction.</p>
+<p>The ability to encapsulate related behaviour, attributes, and implementation allows programmers to utilize abstraction. Abstraction facilitates separation. OOPLs allows programmers to keep concepts separate by abstracting them from one another. Keeping abstract concepts separate allows these concepts to evolve and be used independently. Properly designed types allow abstraction; a File class can abstract the file system away from a particular file, for example. The file system is part-and-parcel when dealing with files; but while dealing with a File object, it is abstracted away.</p>
+<p>Good OOD has as little dependencies between parts as possible. This is called lack of coupling. One part that uses another part means the part depends on that other part. Changes to the second affect the first. Good OOD also has parts that contain related behaviour and attributes. This is called cohesion. If all the behaviour and attributes are generally used together in each scenario, the part has high cohesion. If only some behaviour or attributes are used in each scenario, the part has low cohesion and likely should be split up. Some people only view cohesion and coupling at the class level, I've purposely said &quot;part&quot; because I believe these concepts need to live throughout the modeled system, from class-level details, to modules, to namespace, to assemblies, to layers, to components, to systems, etc.</p>
+<p>I will continuethis series with the fundamental OOD principles that all good patterns should enforce.</p>
+<p><img src="http://www.dotnetkicks.com/Services/Images/KickItImageGenerator.ashx?url=http%3a%2f%2fmsmvps.com%2fblogs%2fpeterritchie%2farchive%2f2008%2f05%2f01%2ffundamentals-of-object-oriented-design-ood-part-1.aspx" class="img-fluid" alt="kick it on DotNetKicks.com" /></p>
 
-            <hr />
-            <h5>Older Posts</h5>
-            <ul class="list-unstyled">
-                    <li><a href="/posts/Service-Oriented-is-Declarative-Not-Imperative">Service-Oriented is Declarative, not Imperative</a></li>
-                    <li><a href="/posts/Thoughts-Web-Services--REST-APIs--and-Message-Structure">Thoughts on Web Services, REST APIs, and Message Structure</a></li>
-                    <li><a href="/posts/Domain-Oriented-Observability-The-Decorative-Way">Domain-Oriented Observability: The Decorative Way</a></li>
-                    <li><a href="/posts/Disabled-Browser-Copy-to-Clipboard--WTF">Disabled Browser Copy-to-Clipboard: WTF?</a></li>
-            </ul>
-                <ul class="pager">
-                    <li class="next">
-                        <a href="/posts">Archive &rarr;</a>
-                    </li>
-                </ul>
 
-        
-    </div> 
-</div>
+<div id="disqus_thread"></div>  
+<!--
+    'Fundamentals-of-Object-Oriented-Design-(OOD)-Part-1'
+    'Fundamentals of Object-Oriented Design (OOD) Part 1'
+    'http://blog.peterritchie.com/posts/Fundamentals-of-Object-Oriented-Design-(OOD)-Part-1'
+-->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 
+    var fromJekyllDate = new Date('Wed Feb 01 2022');
+    var publishedDate = new Date('5/1/2008');
+    console.info('Fundamentals-of-Object-Oriented-Design-(OOD)-Part-1');
+
+    var disqus_identifier = '';
+    var disqus_shortname = 'peterritchiesblog'; // required: replace example with your forum shortname
+    var disqus_title = 'Fundamentals of Object-Oriented Design (OOD) Part 1';
+    var disqus_url = 'http://blog.peterritchie.com/posts/Fundamentals-of-Object-Oriented-Design-(OOD)-Part-1';
+
+    if(publishedDate < fromJekyllDate)
+    {
+        disqus_url = disqus_url.replace('/posts', '');
+        disqus_url = disqus_url + '/';
+    }
+    else
+    {
+        //var disqus_identifier = 'Fundamentals-of-Object-Oriented-Design-(OOD)-Part-1';
+    }
+    console.info(disqus_identifier);
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
                                 </div>
                         </div>
                 </div>

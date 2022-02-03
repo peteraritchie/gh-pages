@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 
-        <title>Peter Ritchie</title>
+        <title>Peter Ritchie - Getting Started Unit Testing with nUnit</title>
         <meta name="description" content="Peter Ritchie" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">        
 
@@ -28,9 +28,9 @@
         <meta name="msapplication-tooltip" content="Peter Ritchie" />
         <meta name="msapplication-starturl" content="/" />
 
-        <meta property="og:title" content="Peter Ritchie" />
+        <meta property="og:title" content="Peter Ritchie - Getting Started Unit Testing with nUnit" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="http://blog.peterritchie.com/" />
+        <meta property="og:url" content="http://blog.peterritchie.com/posts/Getting-Started-Unit-Testing-with-nUnit" />
         <!-- TODO: More social graph meta tags -->
 
         
@@ -73,10 +73,16 @@
                                 <div class="row">
                                         <div class="col-md-12">
 
-    <div class="site-heading">
-        <h1>Peter Ritchie</h1>
-                <hr class="small">
-        <span class="subheading">IT Architecture Expert</span>
+    
+<div class="post-heading">
+    <h1>Getting Started Unit Testing with nUnit</h1>
+    <div class="meta">        
+Published on Sunday, April 18, 2010<br>    </div>
+        <div class="tags">
+                    <a role="button" href="/tags/April-2010" class="btn btn-default btn-xs">April 2010</a>
+                    <a role="button" href="/tags/msmvps" class="btn btn-default btn-xs">msmvps</a>
+                    <a role="button" href="/tags/Uncategorized" class="btn btn-default btn-xs">Uncategorized</a>
+        </div>     
 </div>
                                         </div>
                                 </div>
@@ -88,75 +94,88 @@
                         <div class="row">
                                 <div id="content" class="col-md-12">
                                         
-<div class="row">
-    <div class="col-sm-8 right-border">
-                <div class="post-preview">
-                    <a href="/posts/What-is-Breadcrumbing-in-The-Workplace">
-                        <h2 class="post-title">What is &quot;Breadcrumbing&quot; in The Workplace?</h2>
-                    </a>
-                    <p class="post-meta">Posted on Saturday, January 29, 2022</p>
-<p><img src="/assets/jeshoots-com--2vD8lIhdnw-unsplash.jpg" class="img-fluid" alt="frustration"></p>                </div>       
-                    <hr /> 
-                <div class="post-preview">
-                    <a href="/posts/Environment-Variables-with-CSharp-Conditional-Compilation-Symbols">
-                        <h2 class="post-title">Environment Variables with C# Conditional Compilation Symbols</h2>
-                    </a>
-                    <p class="post-meta">Posted on Thursday, December 12, 2019</p>
-<p>Have you ever thought, it would be nice to have a symbol like <code>PETERRIT</code> that is unique to your domain account that you could use for code that YOU maybe working on but don't want to break the build?</p>                </div>       
-                    <hr /> 
-                <div class="post-preview">
-                    <a href="/posts/RESTful-Versioning">
-                        <h2 class="post-title">RESTful Versioning</h2>
-                    </a>
-                    <p class="post-meta">Posted on Tuesday, November 12, 2019</p>
-<p>Versioning is not new.  Versioning seems to be one of those things that people find hard to do or difficult to fully understand, especially with services and APIs.  RESTful versioning seems to be in the realm of Tabs v Spaces, but I want to detail my related observations (mostly of other's writings, but with some added color).</p>                </div>       
-        <ul class="pager">
-            <li class="previous">                
-            </li>
-            <li class="next">
-            </li>
-        </ul>
-    </div>
-    <div class="col-sm-4 sidebar">
-        <hr class="visible-xs-block" />
 
-            <h5>Tags</h5>
-            <div>
-                    <a role="button" href="/tags/msmvps" class="btn btn-default btn-sm"> msmvps (275)</a>
-                    <a role="button" href="/tags/Software-Development" class="btn btn-default btn-sm"> Software Development (101)</a>
-                    <a role="button" href="/tags/NET-Development" class="btn btn-default btn-sm"> .NET Development (91)</a>
-                    <a role="button" href="/tags/C%23" class="btn btn-default btn-sm"> C# (87)</a>
-                    <a role="button" href="/tags/Uncategorized" class="btn btn-default btn-sm"> Uncategorized (61)</a>
-                    <a role="button" href="/tags/Design/Coding-Guidance" class="btn btn-default btn-sm"> Design/Coding Guidance (50)</a>
-                    <a role="button" href="/tags/Software-Development-Guidance" class="btn btn-default btn-sm"> Software Development Guidance (33)</a>
-                    <a role="button" href="/tags/DevCenterPost" class="btn btn-default btn-sm"> DevCenterPost (31)</a>
-                    <a role="button" href="/tags/Visual-Studio-2008" class="btn btn-default btn-sm"> Visual Studio 2008 (19)</a>
-                    <a role="button" href="/tags/Visual-Studio-2005" class="btn btn-default btn-sm"> Visual Studio 2005 (19)</a>
-            </div>
-            <ul class="pager">
-                <li class="next">
-                    <a href="/tags">View All Tags &rarr;</a>
-                </li>
-            </ul>
+<p><a href="http://blogs.msmvps.com/peterritchie/2010/04/18/getting-started-unit-testing-with-nunit/" title="Permalink to Getting Started Unit Testing with nUnit">Source</a></p>
+<h1 id="getting-started-unit-testing-with-nunit">Getting Started Unit Testing with nUnit</h1>
+<p>Getting started with unit testing with nUnit is easy. <em>First download and install the latest version of nUnit</em>, which can be found here: <a href="http://www.nunit.org/index.php?p=download">http://www.nunit.org/index.php?p=download</a></p>
+<p>Next, you need to <em>decide where you want your unit tests will live</em>. If you're developing a shrink-wrapped system that will be deployed to multiple customers or clients, you'll likely want to have an independent project to house your tests. If you're developing an enterprise system—and the software won't be deployed outside your enterprise—then having the tests within an existing project (usually the highest-level project) is a valid option.</p>
+<p><strong>Note:</strong> The only configuration I've been able to get to work with Visual Studio 2010 compiled assemblies is to have my assemblies compile to x86 and use nunit-x86.exe to run the tests.</p>
+<p>Wherever you decide to keep your unit tests, you need to add a reference to the nUnit assembly. <em>Add a reference to nunit.framework.dll</em>.</p>
+<p>Next, you can <em>write some tests</em>. For example:</p>
+<p>[TestFixture]<br />
+public class TestSomething<br />
+{<br />
+[Test]<br />
+public void FailingTest()<br />
+{<br />
+Assert.Fail(&quot;Fail description.&quot;);<br />
+}<br />
+[Test]<br />
+public void PassingTest()<br />
+{<br />
+Assert.Pass();<br />
+}<br />
+[Test]<br />
+public void InconclusiveTest()<br />
+{<br />
+Assert.Inconclusive(&quot;Reason for lack of conclusion.&quot;);<br />
+}</p>
+<p>}</p>
+<p>Then, compile, and <em>load your test assembly into nUnit</em>. Clicking the Run button should result in something like the following in nUnit.</p>
+<p><img src="http://blogs.msmvps.com/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/peterritchie.metablogapi/8037.image_5F00_thumb_5F00_75912CA9.png" class="img-fluid" alt="image" title="image" /></p>
+<p>You're now ready for Red Green Refactor.</p>
+<h2 id="yellow">Yellow?</h2>
+<p>What about yellow? Red means a test failure, Green means a test pass. But, what about tests that don't have underlying code to be tested. Some may say that this is just another failing test. But, early in your testing efforts you may end up being overwhelmed by red. This could lead to missing a failed test actually is testing code. The alternative is to use the <a href="http://www.nunit.org/index.php?p=utilityAsserts&amp;r=2.5.1">Assert.Inconclusive()</a>. This actually gives you a purple, not yellow, result in nUnit, but you get the idea.</p>
+<h2 id="where-to-from-here">Where to from Here?</h2>
+<p>Now we've got an external test runner and the unit tests for the runner to execute and inform you of red, green, and yellow; you may want to automate the testing process. I would recommend looking at tools like <a href="http://www.testdriven.net/">TestDriven.NET</a>, <a href="http://www.jetbrains.com/resharper/">Resharper</a>, and Continuous Integration tools like <a href="http://confluence.public.thoughtworks.org/display/CCNET/Welcome+to+CruiseControl.NET">CruiseControl.NET</a></p>
+<p>Of course, you've always got the option using the built-in automated testing tools in Visual Studio 2010 Professional, and the Continuous Integration abilities of Visual Studio Team System.</p>
 
-            <hr />
-            <h5>Older Posts</h5>
-            <ul class="list-unstyled">
-                    <li><a href="/posts/Service-Oriented-is-Declarative-Not-Imperative">Service-Oriented is Declarative, not Imperative</a></li>
-                    <li><a href="/posts/Thoughts-Web-Services--REST-APIs--and-Message-Structure">Thoughts on Web Services, REST APIs, and Message Structure</a></li>
-                    <li><a href="/posts/Domain-Oriented-Observability-The-Decorative-Way">Domain-Oriented Observability: The Decorative Way</a></li>
-                    <li><a href="/posts/Disabled-Browser-Copy-to-Clipboard--WTF">Disabled Browser Copy-to-Clipboard: WTF?</a></li>
-            </ul>
-                <ul class="pager">
-                    <li class="next">
-                        <a href="/posts">Archive &rarr;</a>
-                    </li>
-                </ul>
 
-        
-    </div> 
-</div>
+<div id="disqus_thread"></div>  
+<!--
+    'Getting-Started-Unit-Testing-with-nUnit'
+    'Getting Started Unit Testing with nUnit'
+    'http://blog.peterritchie.com/posts/Getting-Started-Unit-Testing-with-nUnit'
+-->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 
+    var fromJekyllDate = new Date('Wed Feb 01 2022');
+    var publishedDate = new Date('4/18/2010');
+    console.info('Getting-Started-Unit-Testing-with-nUnit');
+
+    var disqus_identifier = '';
+    var disqus_shortname = 'peterritchiesblog'; // required: replace example with your forum shortname
+    var disqus_title = 'Getting Started Unit Testing with nUnit';
+    var disqus_url = 'http://blog.peterritchie.com/posts/Getting-Started-Unit-Testing-with-nUnit';
+
+    if(publishedDate < fromJekyllDate)
+    {
+        disqus_url = disqus_url.replace('/posts', '');
+        disqus_url = disqus_url + '/';
+    }
+    else
+    {
+        //var disqus_identifier = 'Getting-Started-Unit-Testing-with-nUnit';
+    }
+    console.info(disqus_identifier);
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
                                 </div>
                         </div>
                 </div>

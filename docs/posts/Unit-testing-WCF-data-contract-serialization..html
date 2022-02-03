@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 
-        <title>Peter Ritchie</title>
+        <title>Peter Ritchie - Unit testing WCF data contract serialization.</title>
         <meta name="description" content="Peter Ritchie" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">        
 
@@ -28,9 +28,9 @@
         <meta name="msapplication-tooltip" content="Peter Ritchie" />
         <meta name="msapplication-starturl" content="/" />
 
-        <meta property="og:title" content="Peter Ritchie" />
+        <meta property="og:title" content="Peter Ritchie - Unit testing WCF data contract serialization." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="http://blog.peterritchie.com/" />
+        <meta property="og:url" content="http://blog.peterritchie.com/posts/Unit-testing-WCF-data-contract-serialization." />
         <!-- TODO: More social graph meta tags -->
 
         
@@ -73,10 +73,17 @@
                                 <div class="row">
                                         <div class="col-md-12">
 
-    <div class="site-heading">
-        <h1>Peter Ritchie</h1>
-                <hr class="small">
-        <span class="subheading">IT Architecture Expert</span>
+    
+<div class="post-heading">
+    <h1>Unit testing WCF data contract serialization.</h1>
+    <div class="meta">        
+Published on Monday, May 4, 2009<br>    </div>
+        <div class="tags">
+                    <a role="button" href="/tags/C%23" class="btn btn-default btn-xs">C#</a>
+                    <a role="button" href="/tags/May-2009" class="btn btn-default btn-xs">May 2009</a>
+                    <a role="button" href="/tags/msmvps" class="btn btn-default btn-xs">msmvps</a>
+                    <a role="button" href="/tags/WCF" class="btn btn-default btn-xs">WCF</a>
+        </div>     
 </div>
                                         </div>
                                 </div>
@@ -88,75 +95,92 @@
                         <div class="row">
                                 <div id="content" class="col-md-12">
                                         
-<div class="row">
-    <div class="col-sm-8 right-border">
-                <div class="post-preview">
-                    <a href="/posts/What-is-Breadcrumbing-in-The-Workplace">
-                        <h2 class="post-title">What is &quot;Breadcrumbing&quot; in The Workplace?</h2>
-                    </a>
-                    <p class="post-meta">Posted on Saturday, January 29, 2022</p>
-<p><img src="/assets/jeshoots-com--2vD8lIhdnw-unsplash.jpg" class="img-fluid" alt="frustration"></p>                </div>       
-                    <hr /> 
-                <div class="post-preview">
-                    <a href="/posts/Environment-Variables-with-CSharp-Conditional-Compilation-Symbols">
-                        <h2 class="post-title">Environment Variables with C# Conditional Compilation Symbols</h2>
-                    </a>
-                    <p class="post-meta">Posted on Thursday, December 12, 2019</p>
-<p>Have you ever thought, it would be nice to have a symbol like <code>PETERRIT</code> that is unique to your domain account that you could use for code that YOU maybe working on but don't want to break the build?</p>                </div>       
-                    <hr /> 
-                <div class="post-preview">
-                    <a href="/posts/RESTful-Versioning">
-                        <h2 class="post-title">RESTful Versioning</h2>
-                    </a>
-                    <p class="post-meta">Posted on Tuesday, November 12, 2019</p>
-<p>Versioning is not new.  Versioning seems to be one of those things that people find hard to do or difficult to fully understand, especially with services and APIs.  RESTful versioning seems to be in the realm of Tabs v Spaces, but I want to detail my related observations (mostly of other's writings, but with some added color).</p>                </div>       
-        <ul class="pager">
-            <li class="previous">                
-            </li>
-            <li class="next">
-            </li>
-        </ul>
-    </div>
-    <div class="col-sm-4 sidebar">
-        <hr class="visible-xs-block" />
 
-            <h5>Tags</h5>
-            <div>
-                    <a role="button" href="/tags/msmvps" class="btn btn-default btn-sm"> msmvps (275)</a>
-                    <a role="button" href="/tags/Software-Development" class="btn btn-default btn-sm"> Software Development (101)</a>
-                    <a role="button" href="/tags/NET-Development" class="btn btn-default btn-sm"> .NET Development (91)</a>
-                    <a role="button" href="/tags/C%23" class="btn btn-default btn-sm"> C# (87)</a>
-                    <a role="button" href="/tags/Uncategorized" class="btn btn-default btn-sm"> Uncategorized (61)</a>
-                    <a role="button" href="/tags/Design/Coding-Guidance" class="btn btn-default btn-sm"> Design/Coding Guidance (50)</a>
-                    <a role="button" href="/tags/Software-Development-Guidance" class="btn btn-default btn-sm"> Software Development Guidance (33)</a>
-                    <a role="button" href="/tags/DevCenterPost" class="btn btn-default btn-sm"> DevCenterPost (31)</a>
-                    <a role="button" href="/tags/Visual-Studio-2008" class="btn btn-default btn-sm"> Visual Studio 2008 (19)</a>
-                    <a role="button" href="/tags/Visual-Studio-2005" class="btn btn-default btn-sm"> Visual Studio 2005 (19)</a>
-            </div>
-            <ul class="pager">
-                <li class="next">
-                    <a href="/tags">View All Tags &rarr;</a>
-                </li>
-            </ul>
+<p><a href="http://blogs.msmvps.com/peterritchie/2009/05/04/unit-testing-wcf-data-contract-serialization/" title="Permalink to Unit testing WCF data contract serialization.">Source</a></p>
+<h1 id="unit-testing-wcf-data-contract-serialization">Unit testing WCF data contract serialization.</h1>
+<p>WCF service define &quot;data contracts&quot; for their interfaces. These contracts are often defined in an XML schema document and used to generated WCF data contract code. This process effectively creates a .NET type that will serialize to a chunk of XML text.</p>
+<p>Depending on the operation of the WCF service, its code may be responsible for creating some of these objects. A return value from an operation, for example. While the framework handles XML serialization of these object behind the scenes. But, if your have complex types and you end up not setting all the properties correctly in your object tracking down what properties haven't been set properly can be a chore as the server would have to enable passing exceptions back to the client, etc.</p>
+<p>A technique that I've found useful is to add unit tests to ensure the creation of my contract objects are indeed serializable.</p>
+<p>For example, I may have an method GetCustomer that retrieves a customer. Where I would like to create this contract Customer I would create a method to create this contract object based on parameters, like a Model Customer object.</p>
+<p>For example:</p>
+<p>PRI.ExampleWcfService.Customer ToWcfContractCustomer(PRI.Model.Customer customer)</p>
+<p>{</p>
+<p>//…</p>
+<p>}</p>
+<p>Now, one of the unit tests would call this method and attempt to serialize the object to XML text, for example:</p>
+<p>[Test]</p>
+<p>public void WhenCreatingCustomerContract_EnsureXmlSerializationSucceeds()</p>
+<p>{</p>
+<p>PRI.ExampleWcfService.Model.Customer customer = CustomerRepository.Get(1);</p>
+<p>PRI.ExampleWcfService.Application.Customer contractCustomer = ToWcfContractCustomer(customer);</p>
+<p>String text = Utility.ContractObjectToXml(contractCustomer);</p>
+<p>}</p>
+<p>where Utility.ContractObjectToXml is declared as:</p>
+<p>public static class Utility</p>
+<p>{</p>
+<p>public static string ContractObjectToXml<T>(T obj)</p>
+<p>{</p>
+<p>DataContractSerializer dataContractSerializer = new DataContractSerializer(obj.GetType());</p>
+<p>String text;</p>
+<p>using (MemoryStream memoryStream = new MemoryStream())</p>
+<p>{</p>
+<p>dataContractSerializer.WriteObject(memoryStream, obj);</p>
+<p>byte[] data = new byte[memoryStream.Length];</p>
+<p>Array.Copy(memoryStream.GetBuffer(), data, data.Length);</p>
+<p>text = Encoding.UTF8.GetString(data);</p>
+<p>}</p>
+<p>return text;</p>
+<p>}</p>
+<p>}</p>
+<p>Now, when this unit test is run, it will fail if the serialization process throws an exception because the resulting XML would violate the schema.</p>
+<p>See [DataContractSerializer.ReadObject is easily confused] for why I'm creating a new buffer and copying the serialized data before converting it to a string.</p>
 
-            <hr />
-            <h5>Older Posts</h5>
-            <ul class="list-unstyled">
-                    <li><a href="/posts/Service-Oriented-is-Declarative-Not-Imperative">Service-Oriented is Declarative, not Imperative</a></li>
-                    <li><a href="/posts/Thoughts-Web-Services--REST-APIs--and-Message-Structure">Thoughts on Web Services, REST APIs, and Message Structure</a></li>
-                    <li><a href="/posts/Domain-Oriented-Observability-The-Decorative-Way">Domain-Oriented Observability: The Decorative Way</a></li>
-                    <li><a href="/posts/Disabled-Browser-Copy-to-Clipboard--WTF">Disabled Browser Copy-to-Clipboard: WTF?</a></li>
-            </ul>
-                <ul class="pager">
-                    <li class="next">
-                        <a href="/posts">Archive &rarr;</a>
-                    </li>
-                </ul>
 
-        
-    </div> 
-</div>
+<div id="disqus_thread"></div>  
+<!--
+    'Unit-testing-WCF-data-contract-serialization.'
+    'Unit testing WCF data contract serialization.'
+    'http://blog.peterritchie.com/posts/Unit-testing-WCF-data-contract-serialization.'
+-->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 
+    var fromJekyllDate = new Date('Wed Feb 01 2022');
+    var publishedDate = new Date('5/4/2009');
+    console.info('Unit-testing-WCF-data-contract-serialization.');
+
+    var disqus_identifier = '';
+    var disqus_shortname = 'peterritchiesblog'; // required: replace example with your forum shortname
+    var disqus_title = 'Unit testing WCF data contract serialization.';
+    var disqus_url = 'http://blog.peterritchie.com/posts/Unit-testing-WCF-data-contract-serialization.';
+
+    if(publishedDate < fromJekyllDate)
+    {
+        disqus_url = disqus_url.replace('/posts', '');
+        disqus_url = disqus_url + '/';
+    }
+    else
+    {
+        //var disqus_identifier = 'Unit-testing-WCF-data-contract-serialization.';
+    }
+    console.info(disqus_identifier);
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
                                 </div>
                         </div>
                 </div>

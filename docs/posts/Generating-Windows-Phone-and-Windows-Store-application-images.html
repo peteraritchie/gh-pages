@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 
-        <title>Peter Ritchie</title>
+        <title>Peter Ritchie - Generating Windows Phone and Windows Store application images</title>
         <meta name="description" content="Peter Ritchie" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">        
 
@@ -28,9 +28,9 @@
         <meta name="msapplication-tooltip" content="Peter Ritchie" />
         <meta name="msapplication-starturl" content="/" />
 
-        <meta property="og:title" content="Peter Ritchie" />
+        <meta property="og:title" content="Peter Ritchie - Generating Windows Phone and Windows Store application images" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="http://blog.peterritchie.com/" />
+        <meta property="og:url" content="http://blog.peterritchie.com/posts/Generating-Windows-Phone-and-Windows-Store-application-images" />
         <!-- TODO: More social graph meta tags -->
 
         
@@ -73,10 +73,19 @@
                                 <div class="row">
                                         <div class="col-md-12">
 
-    <div class="site-heading">
-        <h1>Peter Ritchie</h1>
-                <hr class="small">
-        <span class="subheading">IT Architecture Expert</span>
+    
+<div class="post-heading">
+    <h1>Generating Windows Phone and Windows Store application images</h1>
+    <div class="meta">        
+Published on Wednesday, February 5, 2014<br>    </div>
+        <div class="tags">
+                    <a role="button" href="/tags/NET-Development" class="btn btn-default btn-xs">.NET Development</a>
+                    <a role="button" href="/tags/February-2014" class="btn btn-default btn-xs">February 2014</a>
+                    <a role="button" href="/tags/msmvps" class="btn btn-default btn-xs">msmvps</a>
+                    <a role="button" href="/tags/Software-Development" class="btn btn-default btn-xs">Software Development</a>
+                    <a role="button" href="/tags/Windows-Phone-80" class="btn btn-default btn-xs">Windows Phone 8.0</a>
+                    <a role="button" href="/tags/Windows-Store" class="btn btn-default btn-xs">Windows Store</a>
+        </div>     
 </div>
                                         </div>
                                 </div>
@@ -88,75 +97,66 @@
                         <div class="row">
                                 <div id="content" class="col-md-12">
                                         
-<div class="row">
-    <div class="col-sm-8 right-border">
-                <div class="post-preview">
-                    <a href="/posts/What-is-Breadcrumbing-in-The-Workplace">
-                        <h2 class="post-title">What is &quot;Breadcrumbing&quot; in The Workplace?</h2>
-                    </a>
-                    <p class="post-meta">Posted on Saturday, January 29, 2022</p>
-<p><img src="/assets/jeshoots-com--2vD8lIhdnw-unsplash.jpg" class="img-fluid" alt="frustration"></p>                </div>       
-                    <hr /> 
-                <div class="post-preview">
-                    <a href="/posts/Environment-Variables-with-CSharp-Conditional-Compilation-Symbols">
-                        <h2 class="post-title">Environment Variables with C# Conditional Compilation Symbols</h2>
-                    </a>
-                    <p class="post-meta">Posted on Thursday, December 12, 2019</p>
-<p>Have you ever thought, it would be nice to have a symbol like <code>PETERRIT</code> that is unique to your domain account that you could use for code that YOU maybe working on but don't want to break the build?</p>                </div>       
-                    <hr /> 
-                <div class="post-preview">
-                    <a href="/posts/RESTful-Versioning">
-                        <h2 class="post-title">RESTful Versioning</h2>
-                    </a>
-                    <p class="post-meta">Posted on Tuesday, November 12, 2019</p>
-<p>Versioning is not new.  Versioning seems to be one of those things that people find hard to do or difficult to fully understand, especially with services and APIs.  RESTful versioning seems to be in the realm of Tabs v Spaces, but I want to detail my related observations (mostly of other's writings, but with some added color).</p>                </div>       
-        <ul class="pager">
-            <li class="previous">                
-            </li>
-            <li class="next">
-            </li>
-        </ul>
-    </div>
-    <div class="col-sm-4 sidebar">
-        <hr class="visible-xs-block" />
 
-            <h5>Tags</h5>
-            <div>
-                    <a role="button" href="/tags/msmvps" class="btn btn-default btn-sm"> msmvps (275)</a>
-                    <a role="button" href="/tags/Software-Development" class="btn btn-default btn-sm"> Software Development (101)</a>
-                    <a role="button" href="/tags/NET-Development" class="btn btn-default btn-sm"> .NET Development (91)</a>
-                    <a role="button" href="/tags/C%23" class="btn btn-default btn-sm"> C# (87)</a>
-                    <a role="button" href="/tags/Uncategorized" class="btn btn-default btn-sm"> Uncategorized (61)</a>
-                    <a role="button" href="/tags/Design/Coding-Guidance" class="btn btn-default btn-sm"> Design/Coding Guidance (50)</a>
-                    <a role="button" href="/tags/Software-Development-Guidance" class="btn btn-default btn-sm"> Software Development Guidance (33)</a>
-                    <a role="button" href="/tags/DevCenterPost" class="btn btn-default btn-sm"> DevCenterPost (31)</a>
-                    <a role="button" href="/tags/Visual-Studio-2008" class="btn btn-default btn-sm"> Visual Studio 2008 (19)</a>
-                    <a role="button" href="/tags/Visual-Studio-2005" class="btn btn-default btn-sm"> Visual Studio 2005 (19)</a>
-            </div>
-            <ul class="pager">
-                <li class="next">
-                    <a href="/tags">View All Tags &rarr;</a>
-                </li>
-            </ul>
+<p><a href="http://pr-blog.azurewebsites.net/2014/02/05/generating-windows-phone-and-windows-store-application-images/" title="Permalink to Generating Windows Phone and Windows Store application images">Source</a></p>
+<h1 id="generating-windows-phone-and-windows-store-application-images">Generating Windows Phone and Windows Store application images</h1>
+<p>One thing that you have to get your head around when you get started with Windows Phone or Windows Store development are all the icons you need to have in order to submit an app. Windows Phone 8 needs about 6 icons, depending on the tiles you support and Windows Store needs at least 4 (ApplicationIcon, FlipCycleTileLarge, FlipCycleTileMedium, FlipCycleTileSmall, IconicTileSmall, and IconicTileMediumLarge) depending on what scaling (resolutions) you want to support and whether you want more logos to display in the store.</p>
+<p>You could, of course, have a completely different picture for each of these images; but there are many cases where these images are just a scaled version of one picture. After a couple of app submissions, you quickly grow tired of having to create all these images—even if you're just scaling one picture down to different dimensions. I certainly did, so I decided to automate the process.</p>
+<p>I found that from a Windows Store/Phone aspect the highest common denominator is 300×300, so I create a 300×300 base image and scale it down to the various sizes that are required. After resounding feedback on Twitter that ImageMagick is the way to go for command-line image manipulation, I settled on using ImageMagick to scale the images. ImageMagick has a convert command (executable) to do various things including resizing.</p>
+<h2 id="windows-store">Windows Store</h2>
+<p>To scale down my base image I simply use the resize option and scale down to the various dimensions (50×50, 30×30, 150×150, and 620×300):</p>
+<p>With the 620×300 image I don't want to scale the image to fill the entire space, I just want to take the image and scale it up to 300×300 (or not, since I'm using a 300×300 base image) and centre it in a 620×300 image leaving the unused space transparent. this is where xc:transparent +swap –gravity center –composite comes from. xc:transparent +swap to make a 620×300 background image, and –gravity center –composite to overlay the source image on top of the background.</p>
+<p>For more details on the options for Windows Store logos, check out <a href="http://bitly.com/1bltGeu" title="http://msdn.microsoft.com/en-us/library/windows/apps/hh846296.aspx">http://msdn.microsoft.com/en-us/library/windows/apps/hh846296.aspx</a></p>
+<h2 id="windows-phone-8">Windows Phone 8</h2>
+<p>And it's much the same with Windows Phone 8, with more non-square icons.</p>
+<p>I haven't detailed anything on the Windows Phone 7.x side of things since this seems to be fairly unsupported at multiple levels. If there's interest, I can detail that as well.</p>
 
-            <hr />
-            <h5>Older Posts</h5>
-            <ul class="list-unstyled">
-                    <li><a href="/posts/Service-Oriented-is-Declarative-Not-Imperative">Service-Oriented is Declarative, not Imperative</a></li>
-                    <li><a href="/posts/Thoughts-Web-Services--REST-APIs--and-Message-Structure">Thoughts on Web Services, REST APIs, and Message Structure</a></li>
-                    <li><a href="/posts/Domain-Oriented-Observability-The-Decorative-Way">Domain-Oriented Observability: The Decorative Way</a></li>
-                    <li><a href="/posts/Disabled-Browser-Copy-to-Clipboard--WTF">Disabled Browser Copy-to-Clipboard: WTF?</a></li>
-            </ul>
-                <ul class="pager">
-                    <li class="next">
-                        <a href="/posts">Archive &rarr;</a>
-                    </li>
-                </ul>
 
-        
-    </div> 
-</div>
+<div id="disqus_thread"></div>  
+<!--
+    'Generating-Windows-Phone-and-Windows-Store-application-images'
+    'Generating Windows Phone and Windows Store application images'
+    'http://blog.peterritchie.com/posts/Generating-Windows-Phone-and-Windows-Store-application-images'
+-->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 
+    var fromJekyllDate = new Date('Wed Feb 01 2022');
+    var publishedDate = new Date('2/5/2014');
+    console.info('Generating-Windows-Phone-and-Windows-Store-application-images');
+
+    var disqus_identifier = '';
+    var disqus_shortname = 'peterritchiesblog'; // required: replace example with your forum shortname
+    var disqus_title = 'Generating Windows Phone and Windows Store application images';
+    var disqus_url = 'http://blog.peterritchie.com/posts/Generating-Windows-Phone-and-Windows-Store-application-images';
+
+    if(publishedDate < fromJekyllDate)
+    {
+        disqus_url = disqus_url.replace('/posts', '');
+        disqus_url = disqus_url + '/';
+    }
+    else
+    {
+        //var disqus_identifier = 'Generating-Windows-Phone-and-Windows-Store-application-images';
+    }
+    console.info(disqus_identifier);
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
                                 </div>
                         </div>
                 </div>
